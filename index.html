@@ -36,7 +36,7 @@
 						</ul>
 					</aside>
 				</section>
-				<section data-background="/images/brochure-website.jpg">
+				<section data-background="/images/example-brochure-website.jpg">
 					<aside class="notes">
 						<ul>
 							<li>We build a lot of these – talk through elements (logo, nav, carousel)</li>
@@ -61,7 +61,7 @@
 						</ul>
 					</aside>
 				</section>
-				<section data-background="/images/process.jpg">
+				<section data-background="/images/bg-process.jpg">
 					&nbsp;
 					<aside class="notes">
 						<ul>
@@ -76,6 +76,15 @@
 					<pre class="language-bash"><code>$ git clone https://github.com/feejin/Silverstripe-CleanInstall.git
 $ cd my-project
 composer install</code></pre>
+
+				<aside class="notes">
+					<ul>
+						<li>This is how projects start - our own bootstrap. Modules, gulp, blank theme.</li>
+						<li>It's an ever-shifting setup that we continually improve</li>
+						<li>Streamlines setup by putting as much in place as possible without being overly opinionated</li>
+						<li>It relies on some environmental stuff so don't copy it, but please do see if there's anything that might inspire you.</li>
+					</ul>
+				</aside>
 
 				</section>
 
@@ -94,18 +103,103 @@ composer install</code></pre>
         "post-update-cmd": "Bigfork\\Installer\\Install::postUpdate"
     }
 }</code></pre>
-				</section>
 
 				<aside class="notes">
 					<ul>
 						<li>Tilde explanation</li>
+						<li>As well as framework and CMS we're loading modules, talk about that next</li>
 						<li>Autoload and scripts</li>
 						<li>Config info for silverstripe database credentials, theme name and package.json setup</li>
-						<li>Blank theme and standard configurations</li>
-						<li>Much quicker and easier setup than using IDE, downloadable installer or default composer setup - start with exactly what you want</li>
 						<li>Configuration through _ss_environment so never any issues with editing config files that need to live in the repo</li>
 					</ul>
 				</aside>
+
+				</section>
+
+				<section data-background="/images/bg-modules.jpg">
+					<h1>Modules</h1>
+
+					<aside class="notes">
+						<ul>
+							<li>So, modules are installed with bootstrap</li>
+							<li>As a note, if you have a module on packagist, please use semver and tag releases!</li>
+							<li>Prevents breaking changes and tagging commits makes it hard to refer to later</li>
+							<li>I don't know what anyone in the SS community looks like so shout if I mention your module</li>
+						</ul>
+					</aside>
+
+				</section>
+
+				<section data-background-color="#ffffff">
+					<h1 class="alt">Menu Manager</h1>
+					<pre class="language-bash"><code class="alt">"heyday/silverstripe-menumanager"</code></pre>
+					<pre class="language-bash fragment"><code class="alt"><% loop $MenuSet('SideBar').MenuItems %>
+	<li><a href="$Link" class="$LinkingMode">$MenuTitle</a></li>
+<% end_loop %></code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>For managing menus, not usually main nav bar as site tree does a good job</li>
+							<li>Edge cases - when pages don't have permissions you can still do it with Menu Manager</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background="/images/example-menumanager.jpg" data-transition="fade-out">
+					<h1>Examples</h1>
+					<ul>
+						<li class="fragment fade-in">Auxiliary Links</li>
+						<li class="fragment fade-in">Footer Links</li>
+						<li class="fragment fade-in">Navigation Menu</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Auxiliary links, point to sites scattered throughout the site</li>
+							<li>Why we started menu manager - footer links - reliable means of doing them without hardcoding or nonsensical CMS placement</li>
+							<li>Bit about unbreakable nav bars - impossible with CMS</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background-color="#ffffff">
+					<h1 class="alt">Responsive Images</h1>
+					<pre class="language-bash"><code class="alt">"heyday/silverstripe-responsive-images"</code></pre>
+					<aside class="notes">
+						<ul>
+							<li>Extends image and implements the picturefill polyfill</li>
+							<li>Configure it with picturefill.yml</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background="/images/example-picturefill.jpg">
+					<h1>Picturefill.yml</h1>
+					<pre class="language-bash"><code>ResponsiveImageExtension:
+sets:
+GallerySet:
+  method: CroppedImage
+    sizes:
+      - {query: "(min-width: 200px)", size: 480&zwnj;x&zwnj;240}
+      - {query: "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5)&hellip;", size: 960&zwnj;x&zwnj;480}
+      - {query: "(min-width: 960px)", size: 960&zwnj;x&zwnj;480}
+        default_size: 960&zwnj;x&zwnj;480</code></pre>
+
+        			<h2>Artworking example</h2>
+        			<ul>
+		    			<li>Cropping issue</li>
+		    		</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Note - not based on latest release, personal preference to use the picturefill 1 version but will be moving to 3</li>
+							<li>Looks through rules until one matches, serves that image or default if nothing matches</li>
+							<li>End result is images served up at suitable size for the current display and size</li>
+							<li>Useful for artworking as you can have different ratios, watch out for cropping</li>
+						</ul>
+					</aside>
+				</section>
+
 
 			</div>
 		</div>

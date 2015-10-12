@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background: #1c1e1c; }
 
@@ -11,24 +12,50 @@ body {
 .reveal h4,
 .reveal h5 {
   color: #77bf42;
-  font-family: 'bullpen'; }
+  font-family: 'bullpen';
+  text-shadow: 5px 5px 10px rgba(28, 30, 28, 0.8); }
+  .reveal h1.alt,
+  .reveal h2.alt,
+  .reveal h3.alt,
+  .reveal h4.alt,
+  .reveal h5.alt {
+    color: #1c1e1c !important;
+    text-shadow: none; }
+
+.reveal ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 0.2em; }
+  .reveal ul li:before {
+    display: inline-block;
+    width: 1em;
+    content: '›';
+    color: #77bf42;
+    font-weight: bold; }
 
 .reveal blockquote {
   padding: 1em;
   font-family: 'itc baskerville';
   font-style: italic;
   border: 2px dashed #ccc;
-  background-color: rgba(28, 30, 28, 0.5);
+  background-color: rgba(28, 30, 28, 0.75);
   transform: rotate(-5deg); }
 
 .reveal pre {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  line-height: 2; }
+  line-height: 2;
+  box-shadow: none; }
   .reveal pre.narrow {
     line-height: 1.5; }
   .reveal pre code {
     padding: 0.5em;
     font-family: hack;
-    background-color: rgba(28, 30, 28, 0.5); }
+    background-color: rgba(28, 30, 28, 0.75); }
+    .reveal pre code.alt {
+      background-color: #1c1e1c;
+      color: #ffffff; }
+
+[class^="hljs-"] {
+  color: #77bf42 !important; }

@@ -1,5 +1,6 @@
 $black: #1c1e1c;
 $green: #77bf42;
+$white: #ffffff;
 
 body {
 	background: $black;
@@ -18,6 +19,27 @@ body {
 	h5 {
 		color: $green;
 		font-family: 'bullpen';
+		text-shadow: 5px 5px 10px rgba($black, 0.8);
+
+		&.alt {
+			color: $black !important;
+			text-shadow: none;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0; padding: 0 0 0 0.2em;
+
+		li {
+			&:before {
+				display: inline-block;
+				width: 1em;
+				content: '›';
+				color: $green;
+				font-weight: bold;
+			}
+		}
 	}
 
 	blockquote {
@@ -25,7 +47,7 @@ body {
 		font-family: 'itc baskerville';
 		font-style: italic;
 		border: 2px dashed #ccc;
-		background-color: rgba($black, 0.5);
+		background-color: rgba($black, 0.75);
 		transform: rotate(-5deg);
 	}
 
@@ -34,6 +56,7 @@ body {
 		margin-left: 0;
 		margin-right: 0;
 		line-height: 2;
+		box-shadow: none;
 
 		&.narrow {
 			line-height: 1.5;
@@ -42,9 +65,16 @@ body {
 		code {
 			padding: 0.5em;
 			font-family: hack;
-			background-color: rgba($black, 0.5);
-		}
+			background-color: rgba($black, 0.75);
 
+			&.alt {
+				background-color: $black;
+				color: $white;
+			}
+		}
 	}
 }
 
+[class^="hljs-"] {
+	color: $green !important;
+}
