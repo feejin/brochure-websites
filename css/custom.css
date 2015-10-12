@@ -1,0 +1,34 @@
+body {
+  background: #1c1e1c; }
+
+.reveal * {
+  text-align: left;
+  font-family: tahoma; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+  color: #77bf42;
+  font-family: 'bullpen'; }
+
+.reveal blockquote {
+  padding: 1em;
+  font-family: 'itc baskerville';
+  font-style: italic;
+  border: 2px dashed #ccc;
+  background-color: rgba(28, 30, 28, 0.5);
+  transform: rotate(-5deg); }
+
+.reveal pre {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 2; }
+  .reveal pre.narrow {
+    line-height: 1.5; }
+  .reveal pre code {
+    padding: 0.5em;
+    font-family: hack;
+    background-color: rgba(28, 30, 28, 0.5); }

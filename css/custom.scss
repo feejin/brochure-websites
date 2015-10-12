@@ -1,0 +1,50 @@
+$black: #1c1e1c;
+$green: #77bf42;
+
+body {
+	background: $black;
+}
+
+.reveal {
+	* {
+		text-align: left;
+		font-family: tahoma;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		color: $green;
+		font-family: 'bullpen';
+	}
+
+	blockquote {
+		padding: 1em;
+		font-family: 'itc baskerville';
+		font-style: italic;
+		border: 2px dashed #ccc;
+		background-color: rgba($black, 0.5);
+		transform: rotate(-5deg);
+	}
+
+	pre {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		line-height: 2;
+
+		&.narrow {
+			line-height: 1.5;
+		}
+
+		code {
+			padding: 0.5em;
+			font-family: hack;
+			background-color: rgba($black, 0.5);
+		}
+
+	}
+}
+
