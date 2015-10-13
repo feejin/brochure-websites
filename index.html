@@ -133,7 +133,8 @@ composer install</code></pre>
 				<section data-background-color="#ffffff">
 					<h1 class="alt">Menu Manager</h1>
 					<pre class="language-bash"><code class="alt">"heyday/silverstripe-menumanager"</code></pre>
-					<pre class="language-bash fragment"><code class="alt"><% loop $MenuSet('SideBar').MenuItems %>
+					<img class="fragment" src="/images/menumanager.png" />
+					<pre class="language-bash fragment"><code class="alt"><% loop $MenuSet('MyMenu').MenuItems %>
 	<li><a href="$Link" class="$LinkingMode">$MenuTitle</a></li>
 <% end_loop %></code></pre>
 
@@ -167,17 +168,17 @@ composer install</code></pre>
 					<pre class="language-bash"><code class="alt">"heyday/silverstripe-responsive-images"</code></pre>
 					<aside class="notes">
 						<ul>
-							<li>Extends image and implements the picturefill polyfill</li>
+							<li>Supplies an extension to image and implements the picturefill polyfill</li>
 							<li>Configure it with picturefill.yml</li>
 						</ul>
 					</aside>
 				</section>
 
 				<section data-background-size="100% 100%" data-background="/images/example-picturefill.jpg">
-					<h1>Picturefill.yml</h1>
-					<pre class="language-bash"><code>ResponsiveImageExtension:
+					<h1>Picturefill</h1>
+					<pre class="language-bash fragment"><code>ResponsiveImageExtension:
 sets:
-GallerySet:
+CarouselSet:
   method: CroppedImage
     sizes:
       - {query: "(min-width: 200px)", size: 480&zwnj;x&zwnj;240}
@@ -185,17 +186,81 @@ GallerySet:
       - {query: "(min-width: 960px)", size: 960&zwnj;x&zwnj;480}
         default_size: 960&zwnj;x&zwnj;480</code></pre>
 
-        			<h2>Artworking example</h2>
-        			<ul>
-		    			<li>Cropping issue</li>
-		    		</ul>
+					<pre class="language-bash fragment"><code><% loop $CarouselImages %>
+	<div class="carousel__item">{$CarouselSet}</div>
+<% end_if %></code></pre>
 
 					<aside class="notes">
 						<ul>
 							<li>Note - not based on latest release, personal preference to use the picturefill 1 version but will be moving to 3</li>
 							<li>Looks through rules until one matches, serves that image or default if nothing matches</li>
-							<li>End result is images served up at suitable size for the current display and size</li>
-							<li>Useful for artworking as you can have different ratios, watch out for cropping</li>
+							<li>End result is images served up at suitable size for the current display and size - no 1600 pixel images on your Galaxy Ace</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background-color="#ffffff" data-transition="slide-in fade-out">
+					<h1 class="alt">Focus <br />Point</h1>
+					<pre class="language-bash half"><code class="alt">"jonom/focuspoint"</code></pre>
+					<aside class="notes">
+						<ul>
+							<li>Extension for image that allows specifying a reference point for cropping</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background-size="100% 100%" data-background="/images/example-focuspoint.jpg" data-transition="fade-in slide-out">
+					<h1>Focus <br />Point</h1>
+					<pre class="language-bash placeholder"><code class="alt">"jonom/focuspoint"</code></pre>
+					<aside class="notes">
+						<ul>
+							<li>Prefer it to image crop tools, removes decision making, you just have to point at the important bit</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-transition="fade-in fade-out">
+					<h2>Uploaded Image</h2>
+					<img src="/images/focuspoint-original.jpg" />
+					<aside class="notes">
+						<ul>
+							<li>Here's what it does</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-transition="fade-in fade-out">
+					<h2>CroppedImage(580,400)</h2>
+					<img src="/images/focuspoint-croppedimage.jpg" />
+					<aside class="notes">
+						<ul>
+							<li>CroppedImage resizes and crops to centre, no good if the image isn't centred.</li>
+							<li>Especially noticeable with faces like on "meet the team" pages, cutting off heads etc</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-transition="fade-in fade-out">
+					<h2>CroppedFocusedImage(580,400)</h2>
+					<img src="/images/focuspoint-croppedfocusimage.jpg" />
+					<aside class="notes">
+						<ul>
+							<li>CroppedFocusImage resizes around the focal point</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background="/images/example-focuspoint-real.jpg" data-transition="fade-in slide-out">
+					<h2>Focus Point <br />
+					+ <br />
+					Responsive <br />
+					Images <br />
+					= <br />
+					Awesome <br />
+					Carousels</h2>
+					<aside class="notes">
+						<ul>
+							<li>Ideal for carousels where the ratio is different on mobile and desktop, the focal point is always maintained regardless of crop size</li>
 						</ul>
 					</aside>
 				</section>

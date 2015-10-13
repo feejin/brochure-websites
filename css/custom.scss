@@ -1,6 +1,7 @@
 $black: #1c1e1c;
 $green: #77bf42;
 $white: #ffffff;
+$red: #b80000;
 
 body {
 	background: $black;
@@ -25,6 +26,14 @@ body {
 			color: $black !important;
 			text-shadow: none;
 		}
+	}
+
+	img {
+		width: 100%; height: auto;
+		max-width: 100%;
+		box-sizing: border-box;
+		box-shadow: none;
+		border: 0;
 	}
 
 	ul {
@@ -77,4 +86,12 @@ body {
 
 [class^="hljs-"] {
 	color: $green !important;
+}
+
+.half {
+	max-width: 50% !important;
+}
+
+.placeholder {
+	visibility: hidden !important;
 }
