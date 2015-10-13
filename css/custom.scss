@@ -34,6 +34,12 @@ body {
 		box-sizing: border-box;
 		box-shadow: none;
 		border: 0;
+
+		&.topright {
+			position: absolute !important;
+			top: 0 !important; right: 0 !important;
+			width: auto !important;
+		}
 	}
 
 	ul {
@@ -90,6 +96,10 @@ body {
 
 .half {
 	max-width: 50% !important;
+}
+
+.quarter {
+	max-width: 25% !important;
 }
 
 .placeholder {

@@ -29,6 +29,11 @@ body {
   box-sizing: border-box;
   box-shadow: none;
   border: 0; }
+  .reveal img.topright {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: auto !important; }
 
 .reveal ul {
   list-style-type: none;
@@ -70,6 +75,9 @@ body {
 
 .half {
   max-width: 50% !important; }
+
+.quarter {
+  max-width: 25% !important; }
 
 .placeholder {
   visibility: hidden !important; }

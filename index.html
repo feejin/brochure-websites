@@ -1,97 +1,98 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Making SilverStripe easier (and better) for yourself and your customers</title>
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="css/custom.css">
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="reveal">
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
-					<h1><br />SilverStripe, Brochure Websites and You.</h1>
-					<aside class="notes">
-						<ul>
-							<li>Colin / Bigfork / Digital Marketing Agency in Norwich</li>
-							<li>I&rsquo;m going to talk about Brochure Websites</li>
-						</ul>
-					</aside>
-				</section>
-				<section data-background-size="100% 100%" data-background="/images/example-brochure-website.jpg">
-					<aside class="notes">
-						<ul>
-							<li>We build a lot of these – talk through elements (logo, nav, carousel)</li>
-							<li>Often building for other agencies so little to no design input, so working to whatever we're given</li>
-							<li>Can't rely design around frameworks, grid systems or consistency, it's always bespoke</li>
-							<li>Always have content management system requirements, so we have to make it work, make it easy to use and client-proof it as much as possible</li>
-						</ul>
-					</aside>
-				</section>
+  <head>
+    <meta charset="utf-8">
+    <title>SilverStripe, Brochure Websites and You.</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
-				<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-					<blockquote>
-						&ldquo;Bigfork are second-to-none at taking our InDesign files and recreating them in a content-managed website using Silverstripe.
-						<br /><br />
-						The CMS is very simple to use &ndash; allowing us and our clients to update websites quickly and easily.&rdquo;
-					</blockquote>
-					<aside class="notes">
-						<ul>
-							<li>SilverStripe is awesome for this because it gives complete freedom to accommodate whatever is thrown at us, and the CMS is really user friendly</li>
-							<li>The better job we do here, the less ongoing support we have, so everyone's happy</li>
+<section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
+  <h1><br />SilverStripe, Brochure Websites and You.</h1>
+  <aside class="notes">
+    <ul>
+      <li>Colin / Bigfork / Digital Marketing Agency in Norwich</li>
+      <li>I&rsquo;m going to talk about Brochure Websites</li>
+    </ul>
+  </aside>
+</section>
 
-						</ul>
-					</aside>
-				</section>
-				<section data-background-size="100% 100%" data-background="/images/bg-process.jpg">
-					&nbsp;
-					<aside class="notes">
-						<ul>
-							<li>This is about our ideas, processes and go-to approaches to make everything easier and better all round</li>
-							<li>It's meant to be beginner friendly, so if anything isn't clear please ask me at the end</li>
-						</ul>
-					</aside>
-				</section>
+<section data-background-size="100% 100%" data-background="/images/example-brochure-website.jpg">
+  <aside class="notes">
+    <ul>
+      <li>We build a lot of these – talk through elements (logo, nav, carousel)</li>
+      <li>Often building for other agencies so little to no design input, so working to whatever we're given</li>
+      <li>Can't rely design around frameworks, grid systems or consistency, it's always bespoke</li>
+      <li>Always have content management system requirements, so we have to make it work, make it easy to use and client-proof it as much as possible</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-					<h1>Bootstrap</h1>
-					<pre class="language-bash"><code>$ git clone https://github.com/feejin/Silverstripe-CleanInstall.git
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <blockquote>
+    &ldquo;Bigfork are second-to-none at taking our InDesign files and recreating them in a content-managed website using Silverstripe.
+    <br /><br />
+    The CMS is very simple to use &ndash; allowing us and our clients to update websites quickly and easily.&rdquo;
+  </blockquote>
+  <aside class="notes">
+    <ul>
+      <li>SilverStripe is awesome for this because it gives complete freedom to accommodate whatever is thrown at us, and the CMS is really user friendly</li>
+      <li>The better job we do here, the less ongoing support we have, so everyone's happy</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-process.jpg">
+  &nbsp;
+  <aside class="notes">
+    <ul>
+      <li>This is about our ideas, processes and go-to approaches to make everything easier and better all round</li>
+      <li>It's meant to be beginner friendly, so if anything isn't clear please ask me at the end</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Bootstrap</h1>
+  <pre class="language-bash"><code>$ git clone https://github.com/feejin/Silverstripe-CleanInstall.git
 $ cd my-project
 composer install</code></pre>
 
-				<aside class="notes">
-					<ul>
-						<li>This is how projects start - our own bootstrap. Modules, gulp, blank theme.</li>
-						<li>It's an ever-shifting setup that we continually improve</li>
-						<li>Streamlines setup by putting as much in place as possible without being overly opinionated</li>
-						<li>It relies on some environmental stuff so don't copy it, but please do see if there's anything that might inspire you.</li>
-					</ul>
-				</aside>
+  <aside class="notes">
+    <ul>
+      <li>This is how projects start - our own bootstrap. Modules, gulp, blank theme.</li>
+      <li>It's an ever-shifting setup that we continually improve</li>
+      <li>Streamlines setup by putting as much in place as possible without being overly opinionated</li>
+      <li>It relies on some environmental stuff so don't copy it, but please do see if there's anything that might inspire you.</li>
+    </ul>
+  </aside>
+</section>
 
-				</section>
 
-
-				<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-					<h1>Composer.json</h1>
-					<pre class="language-json narrow"><code>{
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Composer.json</h1>
+  <pre class="language-json narrow"><code>{
     "require": {
         "silverstripe/cms": "~3.1.15",
         "silverstripe/framework": "~3.1.15",
@@ -104,195 +105,373 @@ composer install</code></pre>
     }
 }</code></pre>
 
-				<aside class="notes">
-					<ul>
-						<li>Tilde explanation</li>
-						<li>As well as framework and CMS we're loading modules, talk about that next</li>
-						<li>Autoload and scripts</li>
-						<li>Config info for silverstripe database credentials, theme name and package.json setup</li>
-						<li>Configuration through _ss_environment so never any issues with editing config files that need to live in the repo</li>
-					</ul>
-				</aside>
+  <aside class="notes">
+    <ul>
+      <li>Tilde explanation</li>
+      <li>As well as framework and CMS we're loading modules, talk about that next</li>
+      <li>Autoload and scripts</li>
+      <li>Config info for silverstripe database credentials, theme name and package.json setup</li>
+      <li>Configuration through _ss_environment so never any issues with editing config files that need to live in the repo</li>
+    </ul>
+  </aside>
+</section>
 
-				</section>
+<section data-background-size="100% 100%" data-background="/images/bg-modules.jpg">
+  <h1>Front-end Modules</h1>
 
-				<section data-background-size="100% 100%" data-background="/images/bg-modules.jpg">
-					<h1>Modules</h1>
+  <aside class="notes">
+    <ul>
+      <li>So, modules are installed with bootstrap</li>
+      <li>As a note, if you have a module on packagist, please use semver and tag releases!</li>
+      <li>Prevents breaking changes and tagging commits makes it hard to refer to later</li>
+      <li>I don't know what anyone in the SS community looks like so shout if I mention your module</li>
+    </ul>
+  </aside>
 
-					<aside class="notes">
-						<ul>
-							<li>So, modules are installed with bootstrap</li>
-							<li>As a note, if you have a module on packagist, please use semver and tag releases!</li>
-							<li>Prevents breaking changes and tagging commits makes it hard to refer to later</li>
-							<li>I don't know what anyone in the SS community looks like so shout if I mention your module</li>
-						</ul>
-					</aside>
+</section>
 
-				</section>
-
-				<section data-background-color="#ffffff">
-					<h1 class="alt">Menu Manager</h1>
-					<pre class="language-bash"><code class="alt">"heyday/silverstripe-menumanager"</code></pre>
-					<img class="fragment" src="/images/menumanager.png" />
-					<pre class="language-bash fragment"><code class="alt"><% loop $MenuSet('MyMenu').MenuItems %>
-	<li><a href="$Link" class="$LinkingMode">$MenuTitle</a></li>
+<section data-background-color="#ffffff">
+  <h1 class="alt">Menu Manager</h1>
+  <pre class="language-bash"><code class="alt">"heyday/silverstripe-menumanager"</code></pre>
+  <img class="fragment" src="/images/menumanager.png" />
+  <pre class="language-bash fragment"><code class="alt"><% loop $MenuSet('MyMenu').MenuItems %>
+  <li><a href="$Link" class="$LinkingMode">$MenuTitle</a></li>
 <% end_loop %></code></pre>
 
-					<aside class="notes">
-						<ul>
-							<li>For managing menus, not usually main nav bar as site tree does a good job</li>
-							<li>Edge cases - when pages don't have permissions you can still do it with Menu Manager</li>
-						</ul>
-					</aside>
-				</section>
+  <aside class="notes">
+    <ul>
+      <li>For managing menus, not usually main nav bar as site tree does a good job</li>
+      <li>Edge cases - when pages don't have permissions you can still do it with Menu Manager</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background-size="100% 100%" data-background="/images/example-menumanager.jpg" data-transition="fade-out">
-					<h1>Examples</h1>
-					<ul>
-						<li class="fragment fade-in">Auxiliary Links</li>
-						<li class="fragment fade-in">Footer Links</li>
-						<li class="fragment fade-in">Navigation Menu</li>
-					</ul>
+<section data-background-size="100% 100%" data-background="/images/example-menumanager.jpg" data-transition="fade-out">
+  <h1>Examples</h1>
+  <ul>
+    <li class="fragment fade-in">Auxiliary Links</li>
+    <li class="fragment fade-in">Footer Links</li>
+    <li class="fragment fade-in">Navigation Menu</li>
+  </ul>
 
-					<aside class="notes">
-						<ul>
-							<li>Auxiliary links, point to sites scattered throughout the site</li>
-							<li>Why we started menu manager - footer links - reliable means of doing them without hardcoding or nonsensical CMS placement</li>
-							<li>Bit about unbreakable nav bars - impossible with CMS</li>
-						</ul>
-					</aside>
-				</section>
+  <aside class="notes">
+    <ul>
+      <li>Auxiliary links, point to sites scattered throughout the site</li>
+      <li>Why we started menu manager - footer links - reliable means of doing them without hardcoding or nonsensical CMS placement</li>
+      <li>Bit about unbreakable nav bars - impossible with CMS</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background-color="#ffffff">
-					<h1 class="alt">Responsive Images</h1>
-					<pre class="language-bash"><code class="alt">"heyday/silverstripe-responsive-images"</code></pre>
-					<aside class="notes">
-						<ul>
-							<li>Supplies an extension to image and implements the picturefill polyfill</li>
-							<li>Configure it with picturefill.yml</li>
-						</ul>
-					</aside>
-				</section>
+<section data-background-color="#ffffff">
+  <h1 class="alt">Responsive Images</h1>
+  <pre class="language-bash"><code class="alt">"heyday/silverstripe-responsive-images"</code></pre>
+  <aside class="notes">
+    <ul>
+      <li>Supplies an extension to image and implements the picturefill polyfill</li>
+      <li>Configure it with picturefill.yml</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background-size="100% 100%" data-background="/images/example-picturefill.jpg">
-					<h1>Picturefill</h1>
-					<pre class="language-bash fragment"><code>ResponsiveImageExtension:
-sets:
-CarouselSet:
-  method: CroppedImage
-    sizes:
-      - {query: "(min-width: 200px)", size: 480&zwnj;x&zwnj;240}
-      - {query: "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5)&hellip;", size: 960&zwnj;x&zwnj;480}
-      - {query: "(min-width: 960px)", size: 960&zwnj;x&zwnj;480}
-        default_size: 960&zwnj;x&zwnj;480</code></pre>
+<section data-background-size="100% 100%" data-background="/images/example-picturefill.jpg">
+  <h1>Picturefill</h1>
+  <pre class="language-bash fragment"><code>ResponsiveImageExtension:
+  sets:
+    CarouselSet:
+      method: CroppedImage
+        sizes:
+          - {query: "(min-width: 200px)", size: 480&zwnj;x&zwnj;240}
+          - {query: "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5)&hellip;", size: 960&zwnj;x&zwnj;480}
+          - {query: "(min-width: 960px)", size: 960&zwnj;x&zwnj;480}
+            default_size: 960&zwnj;x&zwnj;480</code></pre>
 
-					<pre class="language-bash fragment"><code><% loop $CarouselImages %>
-	<div class="carousel__item">{$CarouselSet}</div>
+<pre class="language-bash fragment"><code><% loop $CarouselImages %>
+  <div class="carousel__item">{$CarouselSet}</div>
 <% end_if %></code></pre>
 
-					<aside class="notes">
-						<ul>
-							<li>Note - not based on latest release, personal preference to use the picturefill 1 version but will be moving to 3</li>
-							<li>Looks through rules until one matches, serves that image or default if nothing matches</li>
-							<li>End result is images served up at suitable size for the current display and size - no 1600 pixel images on your Galaxy Ace</li>
-						</ul>
-					</aside>
-				</section>
+  <aside class="notes">
+    <ul>
+      <li>Note - not based on latest release, personal preference to use the picturefill 1 version but will be moving to 3</li>
+      <li>Looks through rules until one matches, serves that image or default if nothing matches</li>
+      <li>End result is images served up at suitable size for the current display and size - no 1600 pixel images on your Galaxy Ace</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background-color="#ffffff" data-transition="slide-in fade-out">
-					<h1 class="alt">Focus <br />Point</h1>
-					<pre class="language-bash half"><code class="alt">"jonom/focuspoint"</code></pre>
-					<aside class="notes">
-						<ul>
-							<li>Extension for image that allows specifying a reference point for cropping</li>
-						</ul>
-					</aside>
-				</section>
+<section data-background-color="#ffffff" data-transition="slide-in fade-out">
+  <h1 class="alt">Focus <br />Point</h1>
+  <pre class="language-bash half"><code class="alt">"jonom/focuspoint"</code></pre>
+  <aside class="notes">
+    <ul>
+      <li>Extension for image that allows specifying a reference point for cropping</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background-size="100% 100%" data-background="/images/example-focuspoint.jpg" data-transition="fade-in slide-out">
-					<h1>Focus <br />Point</h1>
-					<pre class="language-bash placeholder"><code class="alt">"jonom/focuspoint"</code></pre>
-					<aside class="notes">
-						<ul>
-							<li>Prefer it to image crop tools, removes decision making, you just have to point at the important bit</li>
-						</ul>
-					</aside>
-				</section>
+<section data-background-size="100% 100%" data-background="/images/example-focuspoint.jpg" data-transition="fade-in slide-out">
+  <h1>Focus <br />Point</h1>
+  <pre class="language-bash placeholder"><code class="alt">"jonom/focuspoint"</code></pre>
+  <aside class="notes">
+    <ul>
+      <li>Prefer it to image crop tools, removes decision making, you just have to point at the important bit</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-transition="fade-in fade-out">
-					<h2>Uploaded Image</h2>
-					<img src="/images/focuspoint-original.jpg" />
-					<aside class="notes">
-						<ul>
-							<li>Here's what it does</li>
-						</ul>
-					</aside>
-				</section>
+<section data-transition="fade-in fade-out">
+  <h2>Uploaded Image</h2>
+  <img src="/images/focuspoint-original.jpg" />
+  <aside class="notes">
+    <ul>
+      <li>Here's what it does</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-transition="fade-in fade-out">
-					<h2>CroppedImage(580,400)</h2>
-					<img src="/images/focuspoint-croppedimage.jpg" />
-					<aside class="notes">
-						<ul>
-							<li>CroppedImage resizes and crops to centre, no good if the image isn't centred.</li>
-							<li>Especially noticeable with faces like on "meet the team" pages, cutting off heads etc</li>
-						</ul>
-					</aside>
-				</section>
+<section data-transition="fade-in fade-out">
+  <h2>CroppedImage(580,400)</h2>
+  <img src="/images/focuspoint-croppedimage.jpg" />
+  <aside class="notes">
+    <ul>
+      <li>CroppedImage resizes and crops to centre, no good if the image isn't centred.</li>
+      <li>Especially noticeable with faces like on "meet the team" pages, cutting off heads etc</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-transition="fade-in fade-out">
-					<h2>CroppedFocusedImage(580,400)</h2>
-					<img src="/images/focuspoint-croppedfocusimage.jpg" />
-					<aside class="notes">
-						<ul>
-							<li>CroppedFocusImage resizes around the focal point</li>
-						</ul>
-					</aside>
-				</section>
+<section data-transition="fade-in fade-out">
+  <h2>CroppedFocusedImage(580,400)</h2>
+  <img src="/images/focuspoint-croppedfocusimage.jpg" />
+  <aside class="notes">
+    <ul>
+      <li>CroppedFocusImage resizes around the focal point</li>
+    </ul>
+  </aside>
+</section>
 
-				<section data-background="/images/example-focuspoint-real.jpg" data-transition="fade-in slide-out">
-					<h2>Focus Point <br />
-					+ <br />
-					Responsive <br />
-					Images <br />
-					= <br />
-					Awesome <br />
-					Carousels</h2>
-					<aside class="notes">
-						<ul>
-							<li>Ideal for carousels where the ratio is different on mobile and desktop, the focal point is always maintained regardless of crop size</li>
-						</ul>
-					</aside>
-				</section>
+<section data-background="/images/example-focuspoint-real.jpg" data-transition="fade-in slide-out">
+  <h2>Focus Point <br />
+  + <br />
+  Responsive <br />
+  Images <br />
+  = <br />
+  Awesome <br />
+  Carousels</h2>
+  <aside class="notes">
+    <ul>
+      <li>Ideal for carousels where the ratio is different on mobile and desktop, the focal point is always maintained regardless of crop size</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-color="#ffffff" data-transition="fade-out">
+  <h1 class="alt">Blog</h1>
+  <pre class="language-bash quarter"><code class="alt">"silverstripe/blog"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Seems like an obvious one but we didn't realise it existed for ages and just used ModelAdmin</li>
+      <li>It's called blog but it's perfect for news and events that don't need a calendar setup</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-color="#ffffff" data-background-size="100% 100%" data-background="/images/bg-blog.jpg" data-transition="fade-in fade-out">
+  <h1 class="alt">Blog</h1>
+  <pre class="language-bash quarter"><code class="alt">"silverstripe/blog"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Uses sitetree, looks and works like pages, handles pagination, has versioning</li>
+      <li>We often remove the more "blog" oriented things for news pages</li>
+      <li>If you have a news section, definitely consider it if you're not already</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/blog-example.jpg" data-transition="fade-in slide-out" data-autoslide="1000">
+  <h1>Blog</h1>
+  <div class="fragment" data-autoslide="0">
+    <pre class="language-bash half"><code><% loop $BlogPost.Limit(1) %>
+  &hellip;
+<% end_with %></code></pre>
+<pre class="language-bash half"><code><% loop $BlogPost.Limit(3,1) %>
+  &hellip;
+<% end_loop %></code></pre>
+</div>
+
+  <aside class="notes">
+    <ul>
+      <li>Here's blog module supply latest news and events content for our brochure website</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/tweet-example.jpg" data-transition="fade-in fade-out">
+  <h1>Special <br />Mention</h1>
+  <div class="fragment">
+  	<h2>Pass Variables...</h2>
+    <pre class="language-bash half"><code><% include Twitter Tweets=2, User="bigfork" %></code></pre>
+   </div>
+  <div class="fragment">
+    <h2>Into Includes</h2>
+		<pre class="language-bash half"><code><a data-tweet-limit="{$Tweets}">&hellip;</a>
+Tweets by @{$User}
+</code></pre>
+  </div>
+
+  <aside class="notes">
+    <ul>
+      <li>Not actually a module</li>
+      <li>But not that prominent in documentation</li>
+      <li>Often use for slight variations without needing totally separate templates</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-color="#ffffff">
+  <h1 class="alt">Better Navigator</h1>
+  <pre class="language-bash"><code class="alt">"jonom/silverstripe-betternavigator"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Last front-end module, more of a user-friendliness thing than a build one</li>
+      <li>I do phone support for people, and there's a fairly common question...</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-navigator.jpg" data-transition="fade-out">
+  <blockquote class="alt" style="text-align:center">&ldquo;I&rsquo;ve unpublished the page and it&rsquo;s still showing&rdquo;</blockquote>
+
+  <aside class="notes">
+    <ul>
+      <li>Usually happens when someone clicks the URLSegment in the CMS and is viewing draft</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-navigator-example.jpg" data-transition="fade-in slide-out">
+  <blockquote class="alt" style="text-align:center">&ldquo;I&rsquo;ve unpublished the page and it&rsquo;s still showing&rdquo;</blockquote>
+
+  <aside class="notes">
+    <ul>
+      <li>Better Navigator is a really easy way of checking and switching to published</li>
+      <li>Edit in CMS link is also handy for larger sites where people edit their own bits - saves them navigating the CMS</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-modules.jpg">
+  <h1>CMS Modules</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>Covered the main modules we use for front-end, everything you need to make a brochure website!</li>
+      <li>CMS modules add features, tidy things up and improve user experience</li>
+    </ul>
+  </aside>
+
+</section>
+
+<section data-background-color="#ffffff" data-transition="fade-out">
+  <h1 class="alt">Security <br />Templates</h1>
+  <pre class="language-bash half"><code class="alt">"feejin/silverstripe-securitytemplates"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Don't use if you have login areas other than CMS!</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-security.jpg" data-transition="fade-in fade-out">
+  <h1>Security <br />Templates</h1>
+  <pre class="language-bash half placeholder"><code class="alt">"feejin/silverstripe-securitytemplates"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Makes the login screen look like the CMS for a more uniform feel</li>
+      <li>Saves styling forms if you don't have any other suitable forms on the website</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-color="#ffffff" data-background-size="100% 100%" data-background="/images/bg-seo.jpg">
+  <h1 class="alt">SEO</h1>
+  <pre class="language-bash half"><code class="alt">"silverstripe/googlesitemaps"
+"kinglozzer/metatitle"
+"kinglozzer/bfgoogleanalytics"
+</code></pre>
+
+  <aside class="notes">
+    <ul>
+			<li>Custom module because don't want dashboard from silverstripe one (shows little info, more confusing than useful)</li>
+			<li>Allows passing extra config</li>
+			<li>e.g. ga('linker:autoLink', ['anotherwebsite.com']);</li>
+		</ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-infoboxes.jpg" data-transition="fade-in fade-out">
+  <h1>Infoboxes</h1>
+  <pre class="language-bash half"><code>"stnvh/silverstripe-infoboxes"</code></pre>
+
+  <aside class="notes">
+    <ul>
+			<li>Custom warnings and notices to remind devs about things</li>
+			<li>Default password, missing module settings, viewing in dev mode</li>
+		</ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-misc.jpg">
+  <h1>Last, but not least</h1>
+  <pre class="language-bash"><code>"kinglozzer/htmleditornoalignment"
+"kinglozzer/htmleditoruploadfield"
+"silverstripe-australia/gridfieldextensions"
+</code></pre>
+
+  <aside class="notes">
+    <ul>
+			<li>Things that add little improvements...</li>
+			<li>Default image alignment is none, styled as a block element, rather than floated left</li>
+			<li>Adds a file upload to the HTMLEditorField - much easier. Standard in 3.2, hurrah!</li>
+			<li>Among other things that I don't use much, it makes gridfields reorderable with drag and drop</li>
+		</ul>
+  </aside>
+</section>
 
 
-			</div>
-		</div>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-		<script>
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				width: 1280,
-				height: 800,
-				margin: 0.1,
-				controls: false,
-				progress: false,
-				history: true,
-				center: true,
-				showNotes: false,
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
-	</body>
+
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1280,
+        height: 800,
+        margin: 0.1,
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+        showNotes: false,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
 </html>
