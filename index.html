@@ -293,10 +293,10 @@ composer install</code></pre>
 <section data-background-size="100% 100%" data-background="/images/blog-example.jpg" data-transition="fade-in slide-out" data-autoslide="1000">
   <h1>Blog</h1>
   <div class="fragment" data-autoslide="0">
-    <pre class="language-bash half"><code><% loop $BlogPost.Limit(1) %>
+<pre class="language-bash half"><code><% loop $List('BlogPost').Limit(1) %>
   &hellip;
 <% end_with %></code></pre>
-<pre class="language-bash half"><code><% loop $BlogPost.Limit(3,1) %>
+<pre class="language-bash half"><code><% loop $List('BlogPost').Limit(3,1) %>
   &hellip;
 <% end_loop %></code></pre>
 </div>
@@ -311,12 +311,12 @@ composer install</code></pre>
 <section data-background-size="100% 100%" data-background="/images/tweet-example.jpg" data-transition="fade-in fade-out">
   <h1>Special <br />Mention</h1>
   <div class="fragment">
-  	<h2>Pass Variables...</h2>
+    <h2>Pass Variables...</h2>
     <pre class="language-bash half"><code><% include Twitter Tweets=2, User="bigfork" %></code></pre>
    </div>
   <div class="fragment">
     <h2>Into Includes</h2>
-		<pre class="language-bash half"><code><a data-tweet-limit="{$Tweets}">&hellip;</a>
+    <pre class="language-bash half"><code><a data-tweet-limit="{$Tweets}">&hellip;</a>
 Tweets by @{$User}
 </code></pre>
   </div>
@@ -407,10 +407,10 @@ Tweets by @{$User}
 
   <aside class="notes">
     <ul>
-			<li>Custom module because don't want dashboard from silverstripe one (shows little info, more confusing than useful)</li>
-			<li>Allows passing extra config</li>
-			<li>e.g. ga('linker:autoLink', ['anotherwebsite.com']);</li>
-		</ul>
+      <li>Custom module because don't want dashboard from silverstripe one (shows little info, more confusing than useful)</li>
+      <li>Allows passing extra config</li>
+      <li>e.g. ga('linker:autoLink', ['anotherwebsite.com']);</li>
+    </ul>
   </aside>
 </section>
 
@@ -420,9 +420,9 @@ Tweets by @{$User}
 
   <aside class="notes">
     <ul>
-			<li>Custom warnings and notices to remind devs about things</li>
-			<li>Default password, missing module settings, viewing in dev mode</li>
-		</ul>
+      <li>Custom warnings and notices to remind devs about things</li>
+      <li>Default password, missing module settings, viewing in dev mode</li>
+    </ul>
   </aside>
 </section>
 
@@ -435,15 +435,196 @@ Tweets by @{$User}
 
   <aside class="notes">
     <ul>
-			<li>Things that add little improvements...</li>
-			<li>Default image alignment is none, styled as a block element, rather than floated left</li>
-			<li>Adds a file upload to the HTMLEditorField - much easier. Standard in 3.2, hurrah!</li>
-			<li>Among other things that I don't use much, it makes gridfields reorderable with drag and drop</li>
-		</ul>
+      <li>Things that add little improvements...</li>
+      <li>Default image alignment is none, styled as a block element, rather than floated left</li>
+      <li>Adds a file upload to the HTMLEditorField - much easier. Standard in 3.2, hurrah!</li>
+      <li>Among other things that I don't use much, it makes gridfields reorderable with drag and drop</li>
+    </ul>
   </aside>
 </section>
 
+<section data-background-size="100% 100%" data-background="/images/bg-housekeeping.jpg">
+  <h1 class="alt">Good <br />Housekeeping</h1>
 
+  <aside class="notes">
+    <ul>
+      <li>Modules aside, how else can we make the CMS even more user friendly?</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>TidyUp TinyMCE</h1>
+  <img class="fragment" src="/images/tinymce-before.png" />
+  <img class="fragment" src="/images/tinymce-after.png" />
+
+  <aside class="notes">
+    <ul>
+      <li>More logical order, remove unused / obscure features</li>
+      <li>Special characters, three different pastes! Just confusing</li>
+      <li>CSS should be doing the styling, not the text editor</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg" data-transition="fade-out">
+  <h1>_config.php</h1>
+<pre class="language-php"><code>$config = HtmlEditorConfig::get('cms');</code></pre>
+
+<pre class="language-php"><code>$config->disablePlugins('emotions', 'fullscreen');
+$config->setButtonsForLine(1, 'formatselect,separator,bullist,numlist,
+  separator,bold,italic,sup,sub,separator,sslink,unlink,anchor,separator,ssmedia,pasteword,
+  separator,spellchecker,undo,redo,code');
+$config->setButtonsForLine(2, 'tablecontrols');
+$config->setButtonsForLine(3, '');
+
+</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Strip out unwanted plugins</li>
+      <li>Override buttons with the simpler setup</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg"  data-transition="fade-in slide-out">
+  <h1>_config.php</h1>
+<pre class="language-php"><code>$config = HtmlEditorConfig::get('cms');</code></pre>
+
+<pre class="language-php"><code>$config->setOptions(array(
+  'theme_advanced_blockformats' => 'p,h2,h3',
+  'paste_auto_cleanup_on_paste' => 'true',
+  'paste_remove_styles' => 'true',
+  'paste_strip_class_attributes' => 'all',
+  'paste_remove_spans' => 'true'
+));</code></pre>
+</section>
+
+  <aside class="notes">
+    <ul>
+      <li>This goes with the previous bit, just split for space</li>
+      <li>Simplify header styles on a per site basis. H1 is usually $Title and blockquote is usually separate</li>
+      <li>As we removed a load of paste options, we santise automatically as much as possible</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-blood.jpg">
+  <h1 class="alt">Page Rage!</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>I have loads of little issues with site tree and pages</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/page-add-bad.jpg" data-transition="fade-in slide-out">
+  <h1>Clutter</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>I don't want to know what I can't add, just what I can</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>One weird trick</h1>
+  <div class="fragmemt">
+    <pre class="language-php"><code>LeftAndMain::require_css(basename(__DIR__) . '/css/cms.css');</code></pre>
+  </div>
+  <div class="fragment">
+    <pre class="language-scss"><code>#Form_AddForm_PageType .disabled {
+  display: none !important;
+}</code></pre>
+  </div>
+  <div class="fragment">
+    <pre class="language-scss"><code>#Menu-Help {
+  display: none;
+}</code></pre>
+  </div>
+  <div class="fragment">
+    <pre class="language-scss"><code>.cms-logo a {
+  background-image: url('http://placekitten.com/26/23');
+}</code></pre>
+  </div>
+
+  <aside class="notes">
+    <ul>
+      <li>Let's just load some extra CMS CSS through config.php</li>
+      <li>Now we can hide disabled pages with CSS</li>
+      <li>Why not hide other stuff we don't use too, like the help menu?</li>
+      <li>And how about a different logo?</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/page-add-good.jpg" data-transition="fade-in slide-out">
+  <h1>Better</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>Better now</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="slide-in fade-out">
+  <h1>House Rules</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>More of a CMS style guide</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="fade-in fade-out">
+  <blockquote>Always use pages if possible and practical.</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>Anything with a relationship to a page should live under that page</li>
+      <li>E.g. Team page, team members are sub-pages</li>
+      <li>Pages have versioning, other stuff doesn't. Pages are best</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="fade-in fade-out">
+  <blockquote style="transform: rotate(-1deg)">If there are too many fields on a page, group them into tabs. If a tab is too sparsely populated, merge the contents with another tab.</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>Seems obvious but I've seen fields two screens high and tabs with a single checkbox.</li>
+      <li>Make it make sense.</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="fade-in fade-out">
+  <blockquote style="transform: rotate(-4deg)">If something can&rsquo;t be (or shouldn&rsquo;t be) a page, can it be a gridfield within a page? If yes, make it so.</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>Gallery for example, subpages would be possible but impractical</li>
+      <li>Manage it as a gridfield, maybe filed under a nice tab</li>
+      <li>Why not uploadfield for gallery? Because using gridfield all the time makes it consistent for users</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="fade-in fade-out">
+  <blockquote style="transform: rotate(3deg)">If the thing can&rsquo;t or shouldn&rsquo;t be a page, and gridfield within a page isn&rsquo;t relevant, resort to modeladmin.</h1>
+
+  <aside class="notes">
+    <ul>
+      <li>It's easier to train and support people if there's fewer options to remember</li>
+    </ul>
+  </aside>
+</section>
 
       </div>
     </div>

@@ -13,7 +13,7 @@ body {
 .reveal h5 {
   color: #77bf42;
   font-family: 'bullpen';
-  text-shadow: 5px 5px 10px rgba(28, 30, 28, 0.8); }
+  text-shadow: 5px 5px 10px rgba(28, 30, 28, 0.7); }
   .reveal h1.alt,
   .reveal h2.alt,
   .reveal h3.alt,
@@ -51,7 +51,7 @@ body {
   font-family: 'itc baskerville';
   font-style: italic;
   border: 2px dashed #ccc;
-  background-color: rgba(28, 30, 28, 0.75);
+  background-color: rgba(0, 0, 0, 0.7);
   transform: rotate(-5deg); }
 
 .reveal pre {
@@ -65,7 +65,7 @@ body {
   .reveal pre code {
     padding: 0.5em;
     font-family: hack;
-    background-color: rgba(28, 30, 28, 0.75); }
+    background-color: rgba(0, 0, 0, 0.75); }
     .reveal pre code.alt {
       background-color: #1c1e1c;
       color: #ffffff; }
