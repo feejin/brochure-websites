@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>SilverStripe, Brochure Websites and You.</title>
+    <title>Better Living Through SilverStripe Modules.</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
@@ -29,11 +29,18 @@
       <div class="slides">
 
 <section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
-  <h1><br />SilverStripe, Brochure Websites and You.</h1>
+  <h1>Colin Richardson</h1>
+  <h2>@feejin</h2>
+  <h3>cr@bigfork.uk</h3>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
+  <h1><br />SilverStripe Modules for a Better Life.</h1>
   <aside class="notes">
     <ul>
       <li>Colin / Bigfork / Digital Marketing Agency in Norwich</li>
-      <li>I&rsquo;m going to talk about Brochure Websites</li>
+      <li>I'm going to talk about our processes for day-to-day SilverStripe builds</li>
+      <li>Particularly our module setup</li>
     </ul>
   </aside>
 </section>
@@ -41,6 +48,7 @@
 <section data-background-size="100% 100%" data-background="/images/example-brochure-website.jpg">
   <aside class="notes">
     <ul>
+      <li>Brochure website FOCUS</li>
       <li>We build a lot of these – talk through elements (logo, nav, carousel)</li>
       <li>Often building for other agencies so little to no design input, so working to whatever we're given</li>
       <li>Can't rely design around frameworks, grid systems or consistency, it's always bespoke</li>
@@ -59,16 +67,6 @@
     <ul>
       <li>SilverStripe is awesome for this because it gives complete freedom to accommodate whatever is thrown at us, and the CMS is really user friendly</li>
       <li>The better job we do here, the less ongoing support we have, so everyone's happy</li>
-    </ul>
-  </aside>
-</section>
-
-<section data-background-size="100% 100%" data-background="/images/bg-process.jpg">
-  &nbsp;
-  <aside class="notes">
-    <ul>
-      <li>This is about our ideas, processes and go-to approaches to make everything easier and better all round</li>
-      <li>It's meant to be beginner friendly, so if anything isn't clear please ask me at the end</li>
     </ul>
   </aside>
 </section>
@@ -304,6 +302,35 @@ composer install</code></pre>
   <aside class="notes">
     <ul>
       <li>Here's blog module supply latest news and events content for our brochure website</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-color="#ffffff">
+  <h1 class="alt">CacheInclude</h1>
+  <pre class="language-bash"><code class="alt">"heyday/silverstripe-cacheinclude"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Better than partial caching and static publishing because...</li>
+    </ul>
+  </aside>
+</section>
+
+<section>
+  <h1 class="alt">CacheInclude</h1>
+  <pre class="language-php"><code class="alt"><% cache %>
+  <% loop Something %> &hellip; <% end_loop %>
+<% end_cache %></code></pre>
+  <pre class="language-php fragment"><code class="alt"><% cache_include 'TemplateName' %></code></pre>
+  <pre class="language-bash fragment"><code class="alt">"heyday/silverstripe-cacheinclude-manager"</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>Simpler syntax, no need for invaldation rules in template</li>
+      <li>Cache entire includes easily</li>
+      <li>Cache invalidation is handled onwrite so more efficient at the front end</li>
+      <li>More flexibile than staticpublisher if you want to cache lots but not everything</li>
     </ul>
   </aside>
 </section>
