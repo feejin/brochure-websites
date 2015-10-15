@@ -28,7 +28,7 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
-<section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
+<section data-background-color="#77bf42">
   <h1>Colin Richardson</h1>
   <h2>@feejin</h2>
   <h3>cr@bigfork.uk</h3>
@@ -144,7 +144,7 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section data-background-size="100% 100%" data-background="/images/example-menumanager.jpg" data-transition="fade-out">
+<section data-background-size="100% 100%" =="/images/example-menumanager.jpg" data-transition="fade-out">
   <h1>Examples</h1>
   <ul>
     <li class="fragment fade-in">Auxiliary Links</li>
@@ -248,7 +248,7 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section data-background="/images/example-focuspoint-real.jpg" data-transition="fade-in slide-out">
+<section data-background-size="100% 100%" data-background="/images/example-focuspoint-real.jpg" data-transition="fade-in slide-out">
   <h2>Focus Point <br />
   + <br />
   Responsive <br />
@@ -275,7 +275,7 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section data-background-color="#ffffff" data-background-size="100% 100%" data-background="/images/bg-blog.jpg" data-transition="fade-in fade-out">
+<section data-background-size="100% 100%" data-background="/images/bg-blog.jpg" data-transition="fade-in fade-out">
   <h1 class="alt">Blog</h1>
   <pre class="language-bash quarter"><code class="alt">"silverstripe/blog"</code></pre>
 
@@ -318,12 +318,12 @@ composer install</code></pre>
 </section>
 
 <section>
-  <h1 class="alt">CacheInclude</h1>
-  <pre class="language-php"><code class="alt"><% cache %>
+  <h1>CacheInclude</h1>
+  <pre class="language-bash"><code><% cache %>
   <% loop Something %> &hellip; <% end_loop %>
 <% end_cache %></code></pre>
-  <pre class="language-php fragment"><code class="alt"><% cache_include 'TemplateName' %></code></pre>
-  <pre class="language-bash fragment"><code class="alt">"heyday/silverstripe-cacheinclude-manager"</code></pre>
+  <pre class="language-bash fragment"><code><% cache_include 'TemplateName' %></code></pre>
+  <pre class="language-bash fragment"><code>"heyday/silverstripe-cacheinclude-manager"</code></pre>
 
   <aside class="notes">
     <ul>
@@ -338,11 +338,11 @@ composer install</code></pre>
 <section data-background-size="100% 100%" data-background="/images/tweet-example.jpg" data-transition="fade-in fade-out">
   <h1>Special <br />Mention</h1>
   <div class="fragment">
-    <h2>Pass Variables...</h2>
+    <h2>Passing data...</h2>
     <pre class="language-bash half"><code><% include Twitter Tweets=2, User="bigfork" %></code></pre>
    </div>
   <div class="fragment">
-    <h2>Into Includes</h2>
+    <h2>...into Includes</h2>
     <pre class="language-bash half"><code><a data-tweet-limit="{$Tweets}">&hellip;</a>
 Tweets by @{$User}
 </code></pre>
@@ -425,7 +425,7 @@ Tweets by @{$User}
   </aside>
 </section>
 
-<section data-background-color="#ffffff" data-background-size="100% 100%" data-background="/images/bg-seo.jpg">
+<section data-background-size="100% 100%" data-background="/images/bg-seo.jpg">
   <h1 class="alt">SEO</h1>
   <pre class="language-bash half"><code class="alt">"silverstripe/googlesitemaps"
 "kinglozzer/metatitle"
@@ -651,6 +651,90 @@ $config->setButtonsForLine(3, '');
       <li>It's easier to train and support people if there's fewer options to remember</li>
     </ul>
   </aside>
+</section>
+
+<section data-background-color="#77bf42">
+  <h1>FIN.</h1>
+  <h2 class="fragment">bigfork.co.uk<br />@feejin</h2>
+</section>
+
+<section data-background-color="#ffffff">
+  <h1 class="alt">Bonus Material</h1>
+   <aside class="notes">
+    <ul>
+      <li>I've gone through to quickly and have time spare</li>
+      <li>A quick bit about CSS and automation</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Gulp for CSS</h1>
+  <pre class="language-bash"><code>"gulp-sass"
+"gulp-scsslint"
+"gulp-autoprefixer"
+"gulp-css-globbing"
+"gulp-combine-mq"</code></pre>
+   <aside class="notes">
+    <ul>
+      <li>SASS/SCSS compliler.</li>
+      <li>Linter - nesting, ordering - prevents duplicate rules</li>
+      <li>Autoprefixer - adds vendor prefixes based on settings using caniuse as support reference</li>
+      <li>Globbing - wildcard includes e.g. everything in scss/includes</li>
+      <li>Combine - makes media queries easier to add and maintain</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Component Based</h1>
+  <pre class="language-bash"><code>style.scss
+  [includes]
+    _reset.scss
+    _typography.scss
+  [components]
+    _header.scss
+    _footer.scss</code></pre>
+  <aside class="notes">
+    <ul>
+      <li>Component based structure - edit elements rather than breakpoints</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Media Queries</h1>
+  <pre class="language-scss"><code>/* _header.scss */
+
+.header { background-color: #000; }
+
+@include respond(960px) {
+  .header { background-color: #fff; }
+}</code></pre>
+
+  <pre class="language-scss fragment"><code>.header {
+  background-color: #000;
+    @include respond(960px) {
+      background-color: #fff;
+    }
+}</code></pre>
+  <aside class="notes">
+    <ul>
+      <li>Component based structure - edit elements rather than breakpoints</li>
+    </ul>
+  </aside>
+</section>
+
+<section>
+  <h1>Gotchas</h1>
+  <ul>
+    <li class="fragment">Media queries inside classes can make rules very long</li>
+    <li class="fragment">mq-combine can reorder css so don&rsquo;t rely on source order for specificity</li>
+    <li class="fragment">Also breaks source maps :(</li>
+</section>
+
+<section>
+"gulp-tinypng-compress"
 </section>
 
       </div>
