@@ -26,6 +26,10 @@ body {
 			color: $black !important;
 			text-shadow: none;
 		}
+
+		&.bad {
+			color: $red !important;
+		}
 	}
 
 	img {
@@ -47,12 +51,21 @@ body {
 		margin: 0; padding: 0 0 0 0.2em;
 
 		li {
+			margin-bottom: 0.5em;
+			text-shadow: 2px 2px 1px #000;
+
 			&:before {
 				display: inline-block;
 				width: 1em;
 				content: '›';
 				color: $green;
 				font-weight: bold;
+			}
+
+			&.bad {
+				&:before {
+					color: $red;
+				}
 			}
 		}
 	}
@@ -92,6 +105,23 @@ body {
 
 [class^="hljs-"] {
 	color: $green !important;
+}
+[class="hljs-variable"] {
+	color: $white !important;
+}
+
+.language-html {
+	[class="hljs-value"] {
+		color: $white !important;
+	}
+}
+
+.language-scss {
+	&.bad {
+		[class^="hljs-"] {
+			color: $red !important;
+		}
+	}
 }
 
 .half {

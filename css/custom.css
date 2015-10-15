@@ -21,6 +21,12 @@ body {
   .reveal h5.alt {
     color: #1c1e1c !important;
     text-shadow: none; }
+  .reveal h1.bad,
+  .reveal h2.bad,
+  .reveal h3.bad,
+  .reveal h4.bad,
+  .reveal h5.bad {
+    color: #b80000 !important; }
 
 .reveal img {
   width: 100%;
@@ -39,12 +45,17 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0 0 0 0.2em; }
-  .reveal ul li:before {
-    display: inline-block;
-    width: 1em;
-    content: '›';
-    color: #77bf42;
-    font-weight: bold; }
+  .reveal ul li {
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 1px #000; }
+    .reveal ul li:before {
+      display: inline-block;
+      width: 1em;
+      content: '›';
+      color: #77bf42;
+      font-weight: bold; }
+    .reveal ul li.bad:before {
+      color: #b80000; }
 
 .reveal blockquote {
   padding: 1em;
@@ -72,6 +83,15 @@ body {
 
 [class^="hljs-"] {
   color: #77bf42 !important; }
+
+[class="hljs-variable"] {
+  color: #ffffff !important; }
+
+.language-html [class="hljs-value"] {
+  color: #ffffff !important; }
+
+.language-scss.bad [class^="hljs-"] {
+  color: #b80000 !important; }
 
 .half {
   max-width: 50% !important; }

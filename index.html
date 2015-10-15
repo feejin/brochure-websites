@@ -28,10 +28,8 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
-<section data-background-color="#77bf42">
-  <h1>Colin Richardson</h1>
-  <h2>@feejin</h2>
-  <h3>cr@bigfork.uk</h3>
+<section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
+  <h1>Hello StripeCon</h1>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/bg-bigfork.jpg">
@@ -57,9 +55,9 @@
   </aside>
 </section>
 
-<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+<section data-background-color="#822392">
   <blockquote>
-    &ldquo;Bigfork are second-to-none at taking our InDesign files and recreating them in a content-managed website using Silverstripe.
+    &ldquo;Bigfork are second-to-none at taking our InDesign files and recreating them in a content-managed website using SilverStripe.
     <br /><br />
     The CMS is very simple to use &ndash; allowing us and our clients to update websites quickly and easily.&rdquo;
   </blockquote>
@@ -73,9 +71,9 @@
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>Bootstrap</h1>
-  <pre class="language-bash"><code>$ git clone https://github.com/feejin/Silverstripe-CleanInstall.git
+  <pre class="language-text"><code>$ git clone https://github.com/feejin/Silverstripe-CleanInstall.git
 $ cd my-project
-composer install</code></pre>
+$ composer install</code></pre>
 
   <aside class="notes">
     <ul>
@@ -144,7 +142,7 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section data-background-size="100% 100%" =="/images/example-menumanager.jpg" data-transition="fade-out">
+<section data-background-size="100% 100%" data-background="/images/example-menumanager.jpg" data-transition="fade-out">
   <h1>Examples</h1>
   <ul>
     <li class="fragment fade-in">Auxiliary Links</li>
@@ -263,7 +261,7 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section data-background-color="#ffffff" data-transition="fade-out">
+<section data-background-color="#ffffff" data-background-size="100% 100%" data-background="/images/bg-blog.jpg" data-transition="fade-in fade-out">
   <h1 class="alt">Blog</h1>
   <pre class="language-bash quarter"><code class="alt">"silverstripe/blog"</code></pre>
 
@@ -271,16 +269,6 @@ composer install</code></pre>
     <ul>
       <li>Seems like an obvious one but we didn't realise it existed for ages and just used ModelAdmin</li>
       <li>It's called blog but it's perfect for news and events that don't need a calendar setup</li>
-    </ul>
-  </aside>
-</section>
-
-<section data-background-size="100% 100%" data-background="/images/bg-blog.jpg" data-transition="fade-in fade-out">
-  <h1 class="alt">Blog</h1>
-  <pre class="language-bash quarter"><code class="alt">"silverstripe/blog"</code></pre>
-
-  <aside class="notes">
-    <ul>
       <li>Uses sitetree, looks and works like pages, handles pagination, has versioning</li>
       <li>We often remove the more "blog" oriented things for news pages</li>
       <li>If you have a news section, definitely consider it if you're not already</li>
@@ -288,16 +276,14 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section data-background-size="100% 100%" data-background="/images/blog-example.jpg" data-transition="fade-in slide-out" data-autoslide="1000">
-  <h1>Blog</h1>
-  <div class="fragment" data-autoslide="0">
+<section data-background-size="100% 100%" data-background="/images/blog-example.jpg" data-transition="fade-in slide-out">
+  <h1>News</h1>
 <pre class="language-bash half"><code><% loop $List('BlogPost').Limit(1) %>
   &hellip;
 <% end_with %></code></pre>
 <pre class="language-bash half"><code><% loop $List('BlogPost').Limit(3,1) %>
   &hellip;
 <% end_loop %></code></pre>
-</div>
 
   <aside class="notes">
     <ul>
@@ -307,7 +293,7 @@ composer install</code></pre>
 </section>
 
 <section data-background-color="#ffffff">
-  <h1 class="alt">CacheInclude</h1>
+  <h1 class="alt">Cache Include</h1>
   <pre class="language-bash"><code class="alt">"heyday/silverstripe-cacheinclude"</code></pre>
 
   <aside class="notes">
@@ -317,9 +303,9 @@ composer install</code></pre>
   </aside>
 </section>
 
-<section>
-  <h1>CacheInclude</h1>
-  <pre class="language-bash"><code><% cache %>
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Easy Cache</h1>
+  <pre class="language-bash fragment"><code><% cache %>
   <% loop Something %> &hellip; <% end_loop %>
 <% end_cache %></code></pre>
   <pre class="language-bash fragment"><code><% cache_include 'TemplateName' %></code></pre>
@@ -336,13 +322,13 @@ composer install</code></pre>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/tweet-example.jpg" data-transition="fade-in fade-out">
-  <h1>Special <br />Mention</h1>
-  <div class="fragment">
+  <h1 style="line-height:1;margin-bottom:0.5em">Special <br />Mention</h1>
+  <div class="fragment" style="margin-bottom:1em">
     <h2>Passing data...</h2>
     <pre class="language-bash half"><code><% include Twitter Tweets=2, User="bigfork" %></code></pre>
    </div>
   <div class="fragment">
-    <h2>...into Includes</h2>
+    <h2>...into includes</h2>
     <pre class="language-bash half"><code><a data-tweet-limit="{$Tweets}">&hellip;</a>
 Tweets by @{$User}
 </code></pre>
@@ -537,18 +523,8 @@ $config->setButtonsForLine(3, '');
   </aside>
 </section>
 
-<section data-background-size="100% 100%" data-background="/images/bg-blood.jpg">
-  <h1 class="alt">Page Rage!</h1>
-
-  <aside class="notes">
-    <ul>
-      <li>I have loads of little issues with site tree and pages</li>
-    </ul>
-  </aside>
-</section>
-
 <section data-background-size="100% 100%" data-background="/images/page-add-bad.jpg" data-transition="fade-in slide-out">
-  <h1>Clutter</h1>
+  <h1>Page type <br />clutter</h1>
 
   <aside class="notes">
     <ul>
@@ -594,6 +570,8 @@ $config->setButtonsForLine(3, '');
   <aside class="notes">
     <ul>
       <li>Better now</li>
+      <li>Only show applicable page types</li>
+      <li>Help is hidden and there's a kitten</li>
     </ul>
   </aside>
 </section>
@@ -668,27 +646,41 @@ $config->setButtonsForLine(3, '');
   </aside>
 </section>
 
-<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-  <h1>Gulp for CSS</h1>
-  <pre class="language-bash"><code>"gulp-sass"
-"gulp-scsslint"
-"gulp-autoprefixer"
-"gulp-css-globbing"
-"gulp-combine-mq"</code></pre>
+<section data-background-size="100% 100%" data-background="/images/bg-gulp.png">
    <aside class="notes">
+      <ul>
+        <li>Gulp is a workflow automator like grunt or codekit.app</li>
+      </ul>
+    </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Automate what?</h1>
+  <ul>
+    <li>Compiling SCSS into CSS</li>
+    <li>Linting SCSS</li>
+    <li>Automatically adding vendor prefixes where required</li>
+    <li>Combining media queries</li>
+    <li>Optimising images</li>
+    <li>Javascript linting and uglifying</li>
+    <li>Live reload</li>
+  </li>
+    <aside class="notes">
     <ul>
       <li>SASS/SCSS compliler.</li>
       <li>Linter - nesting, ordering - prevents duplicate rules</li>
       <li>Autoprefixer - adds vendor prefixes based on settings using caniuse as support reference</li>
-      <li>Globbing - wildcard includes e.g. everything in scss/includes</li>
       <li>Combine - makes media queries easier to add and maintain</li>
+      <li>Using TinyPNG API</li>
+      <li>Not going to talk about javascript</li>
+      <li>Using browsersync, great for testing multiple devices</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-  <h1>Component Based</h1>
-  <pre class="language-bash"><code>style.scss
+  <h1>Component Based SCSS</h1>
+  <pre class="language-bash fragment"><code>style.scss
   [includes]
     _reset.scss
     _typography.scss
@@ -697,44 +689,149 @@ $config->setButtonsForLine(3, '');
     _footer.scss</code></pre>
   <aside class="notes">
     <ul>
-      <li>Component based structure - edit elements rather than breakpoints</li>
+      <li>Not a new idea, many frameworks do this</li>
+      <li>Component based structure better for responsive - edit elements rather than breakpoints</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-  <h1>Media Queries</h1>
-  <pre class="language-scss"><code>/* _header.scss */
+  <h1>Media Queries Mixin</h1>
+  <pre class="language-scss fragment"><code>.header { background-color: $color__black; }</code></pre>
 
-.header { background-color: #000; }
-
-@include respond(960px) {
-  .header { background-color: #fff; }
+<pre class="language-scss fragment"><code>@include respond(960px) {
+  .header { background-color: $colour__white; }
 }</code></pre>
 
-  <pre class="language-scss fragment"><code>.header {
+  <pre class="language-scss fragment" ><code>.header {
   background-color: #000;
-    @include respond(960px) {
-      background-color: #fff;
-    }
+  @include respond(960px) {
+    background-color: $colour__white;
+  }
 }</code></pre>
+
+<pre class="language-scss fragment" ><code>@include retina() {
+  .header { &hellip; }
+}</code></pre>
+
   <aside class="notes">
     <ul>
-      <li>Component based structure - edit elements rather than breakpoints</li>
+      <li>Work from lowest breakpoint to highest</li>
+      <li>Add media queries with rules rather to keep everything component based</li>
+      <li>Can also nest media queries in rules</li>
+      <li>gulp mq combine merges media queries to optimise</li>
     </ul>
   </aside>
 </section>
 
-<section>
-  <h1>Gotchas</h1>
+<section data-background-size="100% 100%" data-background="/images/caveat-emptor.jpg">
+  <h1>Caveat Emptor</h1>
   <ul>
-    <li class="fragment">Media queries inside classes can make rules very long</li>
-    <li class="fragment">mq-combine can reorder css so don&rsquo;t rely on source order for specificity</li>
-    <li class="fragment">Also breaks source maps :(</li>
+    <li class="fragment">Media queries inside rules can make them harder to maintain</li>
+    <li class="fragment">mq-combine can reorder CSS so don&rsquo;t rely on source order for specificity</li>
+    <li class="fragment">mq-combine also breaks source maps :(</li>
+  </ul>
 </section>
 
-<section>
-"gulp-tinypng-compress"
+<section data-background-color="#ffffff" data-transition="slide-in fade-out">
+  <h1 class="alt">BEM</h1>
+  <pre class="language-text"><code class="alt">https://en.bem.info</code></pre>
+   <aside class="notes">
+    <ul>
+      <li>House style for CSS</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-transition="fade-in slide-out">
+  <h1>BEM&ndash;ish</h1>
+  <pre class="placeholder"><code>https://en.bem.info</code></pre>
+  <aside class="notes">
+    <ul>
+      <li>BEM is hard work for small websites but we take the good bits</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
+  <h1>Readable in HTML<br /> &amp; CSS files</h1>
+  <pre class="language-html"><code><nav class="nav">
+  <ul class="nav__menu">
+    <li class="nav__item nav__item--{$LinkingMode}">
+      <a class="nav__link" href="{$Link}">{$MenuTitle}</a>
+    </li>
+  </ul>
+</nav></code></pre>
+  <pre class="language-scss"><code>.nav { &hellip; }
+.nav__menu { &hellip; }
+.nav__item { &hellip; }
+.nav__item--current { &hellip; }  </code></pre>
+
+<aside class="notes">
+    <ul>
+      <li>It's easy to understand what elements will have styling</li>
+      <li>And easy to understand what a CSS rule will be affecting</li>
+      <li>Trading some efficiency for readability</li>
+    </ul>
+</aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg" data-transition="slide-in fade-out">
+  <h1>SCSS &amp; BEM&ndash;ish</h1>
+  <pre class="language-scss"><code>.nav {
+  &hellip;
+  &amp;__item {
+    &hellip;
+    &amp;--current {
+      &hellip;
+} } }</code></pre>
+
+ <pre class="language-scss"><code>.nav { &hellip; }
+.nav__item { &hellip; }
+.nav__item--current { &hellip; }</code></pre>
+<aside class="notes">
+    <ul>
+      <li>You may be tempted to do this</li>
+    </ul>
+</aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg" data-transition="fade-in slide-out">
+  <h1 class="bad">Bad!</h1>
+  <pre class="language-scss bad"><code>.nav {
+  &hellip;
+  &amp;__item {
+    &hellip;
+    &amp;--current {
+      &hellip;
+} } }</code></pre>
+
+  <ul>
+    <li class="bad">Can&rsquo;t search for rules in source files</li>
+    <li class="bad">Harder to gauge specificity</li>
+  </ul>
+
+  <aside class="notes">
+    <ul>
+      <li>You can't search nav__item as a string</li>
+      <li>Can add comments but people forget comments</li>
+      <li>nav__item--current looks more specific than nav because of indents, it isn't though</li>
+      <li>Overall, recommend writing the selector out in full</li>
+    </ul>
+</aside>
+</section>
+
+<section data-background-size="100% 100%" data-background="/images/example-brochure-website.jpg">
+  <aside class="notes">
+    <ul>
+      <li>Hope there was something useful in there for your next project</li>
+    </ul>
+</aside>
+</section>
+
+<section data-background-color="#77bf42">
+  <h1>Questions?</h1>
+  <h2 class="fragment">bigfork.co.uk<br />@feejin</h2>
 </section>
 
       </div>
@@ -764,6 +861,15 @@ $config->setButtonsForLine(3, '');
           { src: 'plugin/notes/notes.js', async: true }
         ]
       });
+
+window.addEventListener("mousedown", handleClick, false);
+window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+
+function handleClick(e) {
+  e.preventDefault();
+  if(e.button === 0) Reveal.next();
+  if(e.button === 2) Reveal.prev();
+}
     </script>
   </body>
 </html>
