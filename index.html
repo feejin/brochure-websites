@@ -33,8 +33,8 @@
   <aside class="notes">
     <ul>
       <li>Colin / Bigfork / Digital Marketing Agency in Norwich</li>
-      <li>I'm going to talk about our processes for day-to-day SilverStripe builds</li>
-      <li>Particularly our module setup</li>
+      <li>I'm going to talk about our day-to-day SilverStripe builds</li>
+      <li>Particularly the modules and tweak we use to make websites better</li>
     </ul>
   </aside>
 </section>
@@ -42,25 +42,27 @@
 <section data-background-size="100% 100%" data-background="/images/example-brochure-website.jpg">
   <aside class="notes">
     <ul>
-      <li>Brochure website FOCUS</li>
-      <li>We build a lot of these – talk through elements (logo, nav, carousel)</li>
-      <li>Often building for other agencies so little to no design input, so working to whatever we're given</li>
-      <li>Can't rely design around frameworks, grid systems or consistency, it's always bespoke</li>
+      <li>The focus of this is on brochure websites, as opposed to web apps (what are brochure websites)</li>
+      <li>We build a lot of these – they have a lot of commong features (logo, nav, carousel)</li>
+      <li>Often for other agencies - little or design input, so working with files given</li>
+      <li>Can't rely on CSS frameworks, grid systems or design consistency, it's always bespoke</li>
       <li>Always have content management system requirements, so we have to make it work, make it easy to use and client-proof it as much as possible</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-color="#822392">
-  <blockquote>
+  <h1 class="alt">Actual Testimonial</h1>
+  <blockquote style="transform:rotate(-2deg);width:90%">
     &ldquo;Bigfork are second-to-none at taking our InDesign files and recreating them in a content-managed website using SilverStripe.
     <br /><br />
     The CMS is very simple to use &ndash; allowing us and our clients to update websites quickly and easily.&rdquo;
   </blockquote>
   <aside class="notes">
     <ul>
-      <li>SilverStripe is awesome for this because it gives complete freedom to accommodate whatever is thrown at us, and the CMS is really user friendly</li>
-      <li>The better job we do here, the less ongoing support we have, so everyone's happy</li>
+      <li>And we're quite good at it</li>
+      <li>SilverStripe is awesome for this because it never gets in the way when you're trying to make a design work</li>
+      <li>Matching the design and having an easy to use CMS means a happy design agency, happy customer, happy end users and less tech support for us. Which makes me happy.</li>
     </ul>
   </aside>
 </section>
@@ -73,14 +75,15 @@ $ composer install</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>This is how projects start - our own bootstrap. Modules, gulp, blank theme.</li>
+      <li>This is how projects start - our own bootstrap.</li>
+      <li>Composer setup for SilverStripe, Modules, gulp, blank theme.</li>
       <li>It's an ever-shifting setup that we continually improve</li>
-      <li>Streamlines setup by putting as much in place as possible without being overly opinionated</li>
+      <li>Streamlines by getting things in place without being overly opinionated</li>
+      <li>Good for outsiders</li>
       <li>It relies on some environmental stuff so don't copy it, but please do see if there's anything that might inspire you.</li>
     </ul>
   </aside>
 </section>
-
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>Composer.json</h1>
@@ -99,11 +102,10 @@ $ composer install</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>Tilde explanation</li>
-      <li>As well as framework and CMS we're loading modules, talk about that next</li>
-      <li>Autoload and scripts</li>
-      <li>Config info for silverstripe database credentials, theme name and package.json setup</li>
-      <li>Configuration through _ss_environment so never any issues with editing config files that need to live in the repo</li>
+      <li>Tilde for next significant release. Will be caret when SilverStripe moves to semver</li>
+      <li>As well as framework and CMS we're loading modules here</li>
+      <li>Autoload and scripts prompts for basic info like project name and description</li>
+      <li>Important configuration through _ss_environment so never any issues with editing config files that need to live in the repo</li>
     </ul>
   </aside>
 </section>
@@ -113,10 +115,10 @@ $ composer install</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>So, modules are installed with bootstrap</li>
+      <li>So, now we've a clean setup with our modules in place</li>
       <li>As a note, if you have a module on packagist, please use semver and tag releases!</li>
       <li>Prevents breaking changes and tagging commits makes it hard to refer to later</li>
-      <li>I don't know what anyone in the SS community looks like so shout if I mention your module</li>
+      <li>I don't know what anyone in the SS community looks like so if I mention your module, thank you for creating it</li>
     </ul>
   </aside>
 
@@ -132,8 +134,9 @@ $ composer install</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>For managing menus, not usually main nav bar as site tree does a good job</li>
-      <li>Edge cases - when pages don't have permissions you can still do it with Menu Manager</li>
+      <li>For managing menus!</li>
+      <li>Adds an option into CMS menu with gridfield interface</li>
+      <li>Then just loop it, treat it like loop $Menu(1)</li>
     </ul>
   </aside>
 </section>
@@ -141,9 +144,9 @@ $ composer install</code></pre>
 <section data-background-size="100% 100%" data-background="/images/example-menumanager.jpg" data-transition="fade-out">
   <h1>Examples</h1>
   <ul>
-    <li class="fragment fade-in">Auxiliary Links</li>
-    <li class="fragment fade-in">Footer Links</li>
-    <li class="fragment fade-in">Navigation Menu</li>
+    <li>Auxiliary Links</li>
+    <li>Footer Links</li>
+    <li>Navigation Menu</li>
   </ul>
 
   <aside class="notes">
@@ -160,15 +163,16 @@ $ composer install</code></pre>
   <pre class="language-bash"><code class="alt">"heyday/silverstripe-responsive-images"</code></pre>
   <aside class="notes">
     <ul>
-      <li>Supplies an extension to image and implements the picturefill polyfill</li>
-      <li>Configure it with picturefill.yml</li>
+      <li>Supplies an extension to image and implements the picturefill.js polyfill</li>
+      <li>I read an alistapart article earlier this week that says responsive images are ready to use. As long as you only want to use srcset and want terrible IE support.</li>
+      <li>I think picturefill.js will be relevant for a while</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/example-picturefill.jpg">
   <h1>Picturefill</h1>
-  <pre class="language-bash fragment"><code>ResponsiveImageExtension:
+  <pre class="language-bash"><code>ResponsiveImageExtension:
   sets:
     CarouselSet:
       method: CroppedImage
@@ -184,15 +188,17 @@ $ composer install</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>Note - not based on latest release, personal preference to use the picturefill 1 version but will be moving to 3</li>
+      <li>Configure responsive images with picturefill.yml</li>
+      <li>Note - not based on latest release, personal preference to use picturefill 1</li>
       <li>Looks through rules until one matches, serves that image or default if nothing matches</li>
       <li>End result is images served up at suitable size for the current display and size - no 1600 pixel images on your Galaxy Ace</li>
+      <li>Updates image on resize too</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-color="#ffffff" data-transition="slide-in fade-out">
-  <h1 class="alt">Focus <br />Point</h1>
+  <h1 style="line-height:1" class="alt">Focus <br />Point</h1>
   <pre class="language-bash half"><code class="alt">"jonom/focuspoint"</code></pre>
   <aside class="notes">
     <ul>
@@ -202,11 +208,13 @@ $ composer install</code></pre>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/example-focuspoint.jpg" data-transition="fade-in slide-out">
-  <h1>Focus <br />Point</h1>
+  <h1 style="line-height:1">Focus <br />Point</h1>
   <pre class="language-bash placeholder"><code class="alt">"jonom/focuspoint"</code></pre>
   <aside class="notes">
     <ul>
+      <li>Looks like this, adds the focus point option to image</li>
       <li>Prefer it to image crop tools, removes decision making, you just have to point at the important bit</li>
+      <li>Also means you don't have to worry about different crop ratios</li>
     </ul>
   </aside>
 </section>
@@ -227,7 +235,8 @@ $ composer install</code></pre>
   <aside class="notes">
     <ul>
       <li>CroppedImage resizes and crops to centre, no good if the image isn't centred.</li>
-      <li>Especially noticeable with faces like on "meet the team" pages, cutting off heads etc</li>
+      <li>Not exactly how it works, for illustration</li>
+      <li>Especially noticeable with faces like on "meet the team" pages, which always seem to be supplied portrait and used square. Cuts off heads etc</li>
     </ul>
   </aside>
 </section>
@@ -237,7 +246,8 @@ $ composer install</code></pre>
   <img src="/images/focuspoint-croppedfocusimage.jpg" />
   <aside class="notes">
     <ul>
-      <li>CroppedFocusImage resizes around the focal point</li>
+      <li>But with CroppedFocusImage we choose the focal point</li>
+      <li>And it crops and resizes around the focal point</li>
     </ul>
   </aside>
 </section>
@@ -253,6 +263,7 @@ $ composer install</code></pre>
   <aside class="notes">
     <ul>
       <li>Ideal for carousels where the ratio is different on mobile and desktop, the focal point is always maintained regardless of crop size</li>
+      <li>Use response images and just change the method from CroppedImage to CroppedFocusedImage</li>
     </ul>
   </aside>
 </section>
@@ -263,11 +274,9 @@ $ composer install</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>Seems like an obvious one but we didn't realise it existed for ages and just used ModelAdmin</li>
+      <li>Seems like an obvious one but we didn't realise it existed for ages and just used ModelAdmin to roll our own</li>
       <li>It's called blog but it's perfect for news and events that don't need a calendar setup</li>
       <li>Uses sitetree, looks and works like pages, handles pagination, has versioning</li>
-      <li>We often remove the more "blog" oriented things for news pages</li>
-      <li>If you have a news section, definitely consider it if you're not already</li>
     </ul>
   </aside>
 </section>
@@ -284,6 +293,8 @@ $ composer install</code></pre>
   <aside class="notes">
     <ul>
       <li>Here's blog module supply latest news and events content for our brochure website</li>
+      <li>I've made it halfway through the homepage build without touching PHP</li>
+      <li>SilverStripe isn't just for people that like code!</li>
     </ul>
   </aside>
 </section>
@@ -301,7 +312,7 @@ $ composer install</code></pre>
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>Easy Cache</h1>
-  <pre class="language-bash fragment"><code><% cache %>
+  <pre class="language-bash"><code><% cache %>
   <% loop Something %> &hellip; <% end_loop %>
 <% end_cache %></code></pre>
   <pre class="language-bash fragment"><code><% cache_include 'TemplateName' %></code></pre>
@@ -312,6 +323,7 @@ $ composer install</code></pre>
       <li>Simpler syntax, no need for invaldation rules in template</li>
       <li>Cache entire includes easily</li>
       <li>Cache invalidation is handled onwrite so more efficient at the front end</li>
+      <li>Cache manager module also available for fine control</li>
       <li>More flexibile than staticpublisher if you want to cache lots but not everything</li>
     </ul>
   </aside>
@@ -319,16 +331,12 @@ $ composer install</code></pre>
 
 <section data-background-size="100% 100%" data-background="/images/tweet-example.jpg" data-transition="fade-in fade-out">
   <h1 style="line-height:1;margin-bottom:0.5em">Special <br />Mention</h1>
-  <div class="fragment" style="margin-bottom:1em">
-    <h2>Passing data...</h2>
+    <div class="fragment">
+    <h2>Passing data <br />into includes</h2>
     <pre class="language-bash half"><code><% include Twitter Tweets=2, User="bigfork" %></code></pre>
-   </div>
-  <div class="fragment">
-    <h2>...into includes</h2>
     <pre class="language-bash half"><code><a data-tweet-limit="{$Tweets}">&hellip;</a>
-Tweets by @{$User}
-</code></pre>
-  </div>
+Tweets by @{$User}</code></pre>
+    </div>
 
   <aside class="notes">
     <ul>
@@ -367,7 +375,7 @@ Tweets by @{$User}
   <aside class="notes">
     <ul>
       <li>Better Navigator is a really easy way of checking and switching to published</li>
-      <li>Edit in CMS link is also handy for larger sites where people edit their own bits - saves them navigating the CMS</li>
+      <li>Edit in CMS link is also handy, some people prefer to navigate the front and and click edit than browse sitetree</li>
     </ul>
   </aside>
 </section>
@@ -377,7 +385,7 @@ Tweets by @{$User}
 
   <aside class="notes">
     <ul>
-      <li>Covered the main modules we use for front-end, everything you need to make a brochure website!</li>
+      <li>I've covered the main modules we mostly use for most brochure website builds.</li>
       <li>CMS modules add features, tidy things up and improve user experience</li>
     </ul>
   </aside>
@@ -416,9 +424,11 @@ Tweets by @{$User}
 
   <aside class="notes">
     <ul>
-      <li>Custom module because don't want dashboard from silverstripe one (shows little info, more confusing than useful)</li>
-      <li>Allows passing extra config</li>
-      <li>e.g. ga('linker:autoLink', ['anotherwebsite.com']);</li>
+      <li>Generates sitemap.xml automatically</li>
+      <li>Reinstates the meta title that was removed in 3.1 - for customisable title tag</li>
+      <li>Our own Analytics module because we don't really like showing generic metrics, not always the right data</li>
+      <li>Allows passing extra config into the GA tracking code e.g. autolinker plugin or custom tracking variables</li>
+      <li>ga('linker:autoLink', ['anotherwebsite.com']);</li>
     </ul>
   </aside>
 </section>
@@ -447,7 +457,7 @@ Tweets by @{$User}
       <li>Things that add little improvements...</li>
       <li>Default image alignment is none, styled as a block element, rather than floated left</li>
       <li>Adds a file upload to the HTMLEditorField - much easier. Standard in 3.2, hurrah!</li>
-      <li>Among other things that I don't use much, it makes gridfields reorderable with drag and drop</li>
+      <li>Among other things, it makes gridfields reorderable with drag and drop - makes it more consistent with pages</li>
     </ul>
   </aside>
 </section>
@@ -464,14 +474,15 @@ Tweets by @{$User}
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>TidyUp TinyMCE</h1>
-  <img class="fragment" src="/images/tinymce-before.png" />
+  <img src="/images/tinymce-before.png" />
   <img class="fragment" src="/images/tinymce-after.png" />
 
   <aside class="notes">
     <ul>
-      <li>More logical order, remove unused / obscure features</li>
-      <li>Special characters, three different pastes! Just confusing</li>
-      <li>CSS should be doing the styling, not the text editor</li>
+      <li>HTMLEditorFields are one of the hardest things to work with because they're not structured like standalone text / file fields</li>
+      <li>Default setup has a lot of stuff that isn't used often - special characters, three different pastes! Just confusing</li>
+      <li>More logical order for training, remove unused / obscure features</li>
+      <li>Things like alignment and colours lead to hideous websites</li>
     </ul>
   </aside>
 </section>
@@ -485,9 +496,7 @@ $config->setButtonsForLine(1, 'formatselect,separator,bullist,numlist,
   separator,bold,italic,sup,sub,separator,sslink,unlink,anchor,separator,ssmedia,pasteword,
   separator,spellchecker,undo,redo,code');
 $config->setButtonsForLine(2, 'tablecontrols');
-$config->setButtonsForLine(3, '');
-
-</code></pre>
+$config->setButtonsForLine(3, '');</code></pre>
 
   <aside class="notes">
     <ul>
@@ -507,12 +516,12 @@ $config->setButtonsForLine(3, '');
   'paste_remove_styles' => 'true',
   'paste_strip_class_attributes' => 'all',
   'paste_remove_spans' => 'true'
-));</code></pre>
-</section>
+));
+
+</code></pre>
 
   <aside class="notes">
     <ul>
-      <li>This goes with the previous bit, just split for space</li>
       <li>Simplify header styles on a per site basis. H1 is usually $Title and blockquote is usually separate</li>
       <li>As we removed a load of paste options, we santise automatically as much as possible</li>
     </ul>
@@ -572,12 +581,30 @@ $config->setButtonsForLine(3, '');
   </aside>
 </section>
 
+<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg" data-transition="fade-in slide-out">
+  <h1>Further Decluttering</h1>
+  <pre class="language-php"><code>class MyPage extends Page {
+  public function canCreate($member=null) {
+    return Permission::check('ADMIN');
+  }
+}</code></pre>
+
+  <aside class="notes">
+    <ul>
+      <li>In the page class</li>
+      <li>Hide page types that people don't need to add</li>
+      <li>Home page for example</li>
+    </ul>
+  </aside>
+</section>
+
 <section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="slide-in fade-out">
   <h1>House Rules</h1>
 
   <aside class="notes">
     <ul>
       <li>More of a CMS style guide</li>
+      <li>Designed to make it easier and consistent for end users</li>
     </ul>
   </aside>
 </section>
@@ -587,8 +614,8 @@ $config->setButtonsForLine(3, '');
 
   <aside class="notes">
     <ul>
-      <li>Anything with a relationship to a page should live under that page</li>
-      <li>E.g. Team page, team members are sub-pages</li>
+      <li>Anything that relates directly to a page should live under that page</li>
+      <li>Meet the Team page for example, make team members as sub-pages</li>
       <li>Pages have versioning, other stuff doesn't. Pages are best</li>
     </ul>
   </aside>
@@ -599,8 +626,9 @@ $config->setButtonsForLine(3, '');
 
   <aside class="notes">
     <ul>
-      <li>Seems obvious but I've seen fields two screens high and tabs with a single checkbox.</li>
-      <li>Make it make sense.</li>
+      <li>I've inherited websites with fields two screens high and tabs containing a single checkbox.</li>
+      <li>Think about how to group content, make it make sense.</li>
+      <li>Avoid accordions for main content, they just add clicks</li>
     </ul>
   </aside>
 </section>
@@ -612,17 +640,18 @@ $config->setButtonsForLine(3, '');
     <ul>
       <li>Gallery for example, subpages would be possible but impractical</li>
       <li>Manage it as a gridfield, maybe filed under a nice tab</li>
-      <li>Why not uploadfield for gallery? Because using gridfield all the time makes it consistent for users</li>
+      <li>Why not uploadfield for gallery? Because there's a strong chance we'll be using gridfield elsewhere, so it means users only have to learn one interface</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/bg-rules.jpg" data-transition="fade-in fade-out">
-  <blockquote style="transform: rotate(3deg)">If the thing can&rsquo;t or shouldn&rsquo;t be a page, and gridfield within a page isn&rsquo;t relevant, resort to modeladmin.</h1>
+  <blockquote style="transform: rotate(3deg)">If the thing can&rsquo;t or shouldn&rsquo;t be a page, and gridfield within a page isn&rsquo;t relevant, resort to a new item in the CMS Menu.</h1>
 
   <aside class="notes">
     <ul>
       <li>It's easier to train and support people if there's fewer options to remember</li>
+      <li>Sitetree and pages are more friendly, hence this being a last resort</li>
     </ul>
   </aside>
 </section>
@@ -645,7 +674,9 @@ $config->setButtonsForLine(3, '');
 <section data-background-size="100% 100%" data-background="/images/bg-gulp.png">
    <aside class="notes">
       <ul>
-        <li>Gulp is a workflow automator like grunt or codekit.app</li>
+        <li>Gulp is a workflow automator, which means it does things for you that makes your life easier</li>
+        <li>Like grunt or codekit.app which are also both good, we just favour gulp for speed</li>
+        <li>And Stan loves fixing buggy javascript</li>
       </ul>
     </aside>
 </section>
@@ -676,7 +707,7 @@ $config->setButtonsForLine(3, '');
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>Component Based SCSS</h1>
-  <pre class="language-bash fragment"><code>style.scss
+  <pre class="language-bash"><code>style.scss
   [includes]
     _reset.scss
     _typography.scss
@@ -686,14 +717,15 @@ $config->setButtonsForLine(3, '');
   <aside class="notes">
     <ul>
       <li>Not a new idea, many frameworks do this</li>
-      <li>Component based structure better for responsive - edit elements rather than breakpoints</li>
+      <li>More manageable that the 320 and up approach based  - edit individual components rather than breakpoints</li>
+      <li>Media queries are included with components so breakpoints are design based rather than arbitrary</li>
     </ul>
   </aside>
 </section>
 
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>Media Queries Mixin</h1>
-  <pre class="language-scss fragment"><code>.header { background-color: $color__black; }</code></pre>
+  <pre class="language-scss"><code>.header { background-color: $color__black; }</code></pre>
 
 <pre class="language-scss fragment"><code>@include respond(960px) {
   .header { background-color: $colour__white; }
@@ -712,9 +744,10 @@ $config->setButtonsForLine(3, '');
 
   <aside class="notes">
     <ul>
-      <li>Work from lowest breakpoint to highest</li>
-      <li>Add media queries with rules rather to keep everything component based</li>
+      <li>Mobile first approach still like 320 and up</li>
+      <li>Add media queries alongside rules rather than end of file e.g. header then queries for header</li>
       <li>Can also nest media queries in rules</li>
+      <li>High DPI displays as well as breakpoints</li>
       <li>gulp mq combine merges media queries to optimise</li>
     </ul>
   </aside>
@@ -744,7 +777,8 @@ $config->setButtonsForLine(3, '');
   <pre class="placeholder"><code>https://en.bem.info</code></pre>
   <aside class="notes">
     <ul>
-      <li>BEM is hard work for small websites but we take the good bits</li>
+      <li>Proper BEM is hard work for small websites and arguable overcomplicating CSS</li>
+      <li>We borrowed some good bits</li>
     </ul>
   </aside>
 </section>
@@ -767,7 +801,7 @@ $config->setButtonsForLine(3, '');
     <ul>
       <li>It's easy to understand what elements will have styling</li>
       <li>And easy to understand what a CSS rule will be affecting</li>
-      <li>Trading some efficiency for readability</li>
+      <li>Trading some modularity and efficiency for readability</li>
     </ul>
 </aside>
 </section>
@@ -787,7 +821,7 @@ $config->setButtonsForLine(3, '');
 .nav__item--current { &hellip; }</code></pre>
 <aside class="notes">
     <ul>
-      <li>You may be tempted to do this</li>
+      <li>If you're using this syntax with a preprocessor, you may be tempted to do this</li>
     </ul>
 </aside>
 </section>
@@ -812,7 +846,7 @@ $config->setButtonsForLine(3, '');
       <li>You can't search nav__item as a string</li>
       <li>Can add comments but people forget comments</li>
       <li>nav__item--current looks more specific than nav because of indents, it isn't though</li>
-      <li>Overall, recommend writing the selector out in full</li>
+      <li>Overall, recommend writing the selector out in full, it'll make your future self and other developers happier</li>
     </ul>
 </aside>
 </section>
@@ -821,13 +855,14 @@ $config->setButtonsForLine(3, '');
   <aside class="notes">
     <ul>
       <li>Hope there was something useful in there for your next project</li>
+      <li>If not I hope you had a nice rest because Loz's talk is way more technical</li>
     </ul>
 </aside>
 </section>
 
 <section data-background-color="#77bf42">
-  <h1>Questions?</h1>
-  <h2 class="fragment">bigfork.co.uk<br />@feejin</h2>
+  <h1 style="margin-bottom:1em">Questions?</h1>
+  <h2 style="line-height:1.2">Colin Richardson<br />bigfork.co.uk<br />@feejin</h2>
 </section>
 
       </div>
