@@ -51,27 +51,9 @@
   </aside>
 </section>
 
-<section data-background-color="#822392">
-  <h1 class="alt">Actual Testimonial</h1>
-  <blockquote style="transform:rotate(-2deg);width:90%">
-    &ldquo;Bigfork are second-to-none at taking our InDesign files and recreating them in a content-managed website using SilverStripe.
-    <br /><br />
-    The CMS is very simple to use &ndash; allowing us and our clients to update websites quickly and easily.&rdquo;
-  </blockquote>
-  <aside class="notes">
-    <ul>
-      <li>And we're quite good at it</li>
-      <li>SilverStripe is awesome for this because it never gets in the way when you're trying to make a design work</li>
-      <li>Matching the design and having an easy to use CMS means a happy design agency, happy customer, happy end users and less tech support for us. Which makes me happy.</li>
-    </ul>
-  </aside>
-</section>
-
 <section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
   <h1>Bootstrap</h1>
-  <pre class="language-text"><code>$ git clone https://github.com/feejin/Silverstripe-CleanInstall.git
-$ cd my-project
-$ composer install</code></pre>
+  <pre class="language-text"><code>github.com/feejin/Silverstripe-CleanInstall.git</code></pre>
 
   <aside class="notes">
     <ul>
@@ -496,7 +478,9 @@ $config->setButtonsForLine(1, 'formatselect,separator,bullist,numlist,
   separator,bold,italic,sup,sub,separator,sslink,unlink,anchor,separator,ssmedia,pasteword,
   separator,spellchecker,undo,redo,code');
 $config->setButtonsForLine(2, 'tablecontrols');
-$config->setButtonsForLine(3, '');</code></pre>
+$config->setButtonsForLine(3, '');
+
+</code></pre>
 
   <aside class="notes">
     <ul>
@@ -516,9 +500,7 @@ $config->setButtonsForLine(3, '');</code></pre>
   'paste_remove_styles' => 'true',
   'paste_strip_class_attributes' => 'all',
   'paste_remove_spans' => 'true'
-));
-
-</code></pre>
+));</code></pre>
 
   <aside class="notes">
     <ul>
@@ -656,11 +638,6 @@ $config->setButtonsForLine(3, '');</code></pre>
   </aside>
 </section>
 
-<section data-background-color="#77bf42">
-  <h1>FIN.</h1>
-  <h2 class="fragment">bigfork.co.uk<br />@feejin</h2>
-</section>
-
 <section data-background-color="#ffffff">
   <h1 class="alt">Bonus Material</h1>
    <aside class="notes">
@@ -762,95 +739,6 @@ $config->setButtonsForLine(3, '');</code></pre>
   </ul>
 </section>
 
-<section data-background-color="#ffffff" data-transition="slide-in fade-out">
-  <h1 class="alt">BEM</h1>
-  <pre class="language-text"><code class="alt">https://en.bem.info</code></pre>
-   <aside class="notes">
-    <ul>
-      <li>House style for CSS</li>
-    </ul>
-  </aside>
-</section>
-
-<section data-transition="fade-in slide-out">
-  <h1>BEM&ndash;ish</h1>
-  <pre class="placeholder"><code>https://en.bem.info</code></pre>
-  <aside class="notes">
-    <ul>
-      <li>Proper BEM is hard work for small websites and arguable overcomplicating CSS</li>
-      <li>We borrowed some good bits</li>
-    </ul>
-  </aside>
-</section>
-
-<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg">
-  <h1>Readable in HTML<br /> &amp; CSS files</h1>
-  <pre class="language-html"><code><nav class="nav">
-  <ul class="nav__menu">
-    <li class="nav__item nav__item--{$LinkingMode}">
-      <a class="nav__link" href="{$Link}">{$MenuTitle}</a>
-    </li>
-  </ul>
-</nav></code></pre>
-  <pre class="language-scss"><code>.nav { &hellip; }
-.nav__menu { &hellip; }
-.nav__item { &hellip; }
-.nav__item--current { &hellip; }  </code></pre>
-
-<aside class="notes">
-    <ul>
-      <li>It's easy to understand what elements will have styling</li>
-      <li>And easy to understand what a CSS rule will be affecting</li>
-      <li>Trading some modularity and efficiency for readability</li>
-    </ul>
-</aside>
-</section>
-
-<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg" data-transition="slide-in fade-out">
-  <h1>SCSS &amp; BEM&ndash;ish</h1>
-  <pre class="language-scss"><code>.nav {
-  &hellip;
-  &amp;__item {
-    &hellip;
-    &amp;--current {
-      &hellip;
-} } }</code></pre>
-
- <pre class="language-scss"><code>.nav { &hellip; }
-.nav__item { &hellip; }
-.nav__item--current { &hellip; }</code></pre>
-<aside class="notes">
-    <ul>
-      <li>If you're using this syntax with a preprocessor, you may be tempted to do this</li>
-    </ul>
-</aside>
-</section>
-
-<section data-background-size="100% 100%" data-background="/images/bg-landscape.jpg" data-transition="fade-in slide-out">
-  <h1 class="bad">Bad!</h1>
-  <pre class="language-scss bad"><code>.nav {
-  &hellip;
-  &amp;__item {
-    &hellip;
-    &amp;--current {
-      &hellip;
-} } }</code></pre>
-
-  <ul>
-    <li class="bad">Can&rsquo;t search for rules in source files</li>
-    <li class="bad">Harder to gauge specificity</li>
-  </ul>
-
-  <aside class="notes">
-    <ul>
-      <li>You can't search nav__item as a string</li>
-      <li>Can add comments but people forget comments</li>
-      <li>nav__item--current looks more specific than nav because of indents, it isn't though</li>
-      <li>Overall, recommend writing the selector out in full, it'll make your future self and other developers happier</li>
-    </ul>
-</aside>
-</section>
-
 <section data-background-size="100% 100%" data-background="/images/example-brochure-website.jpg">
   <aside class="notes">
     <ul>
@@ -861,7 +749,8 @@ $config->setButtonsForLine(3, '');</code></pre>
 </section>
 
 <section data-background-color="#77bf42">
-  <h1 style="margin-bottom:1em">Questions?</h1>
+  <h1 style="line-height:1;margin-bottom:1em">Questions?</h1>
+  <h1 style="line-height:1;margin-bottom:1em">Your favourite modules?</h1>
   <h2 style="line-height:1.2">Colin Richardson<br />bigfork.co.uk<br />@feejin</h2>
 </section>
 
