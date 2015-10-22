@@ -101,3 +101,16 @@ body {
 
 .placeholder {
   visibility: hidden !important; }
+
+.controls .navigate-left {
+  border-right-color: #77bf42 !important; }
+
+.controls .navigate-right {
+  border-left-color: #77bf42 !important; }
+
+.controls .navigate-up,
+.controls .mavigate-down {
+  display: none !important; }
+
+.progress span {
+  background-color: #77bf42 !important; }

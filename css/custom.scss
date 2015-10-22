@@ -135,3 +135,18 @@ body {
 .placeholder {
 	visibility: hidden !important;
 }
+
+.controls {
+	.navigate-left {
+		border-right-color: $green !important;
+	}
+	.navigate-right {
+		border-left-color: $green !important;
+	}
+	.navigate-up,
+	.mavigate-down {
+		display: none !important;
+	}
+}
+
+.progress span { background-color: $green !important; }

@@ -765,8 +765,8 @@ $config->setButtonsForLine(3, '');
         width: 1280,
         height: 800,
         margin: 0.1,
-        controls: false,
-        progress: false,
+        controls: true,
+        progress: true,
         history: true,
         center: true,
         showNotes: false,
@@ -782,14 +782,6 @@ $config->setButtonsForLine(3, '');
         ]
       });
 
-window.addEventListener("mousedown", handleClick, false);
-window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
-
-function handleClick(e) {
-  e.preventDefault();
-  if(e.button === 0) Reveal.next();
-  if(e.button === 2) Reveal.prev();
-}
     </script>
   </body>
 </html>
